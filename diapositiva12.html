@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Competencias Clave del Programa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.ibb.co/pvQ7SDDH/Imagen1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .esquina-superior img,
+    .esquina-inferior img {
+      position: absolute;
+      z-index: 10;
+    }
+
+    .esquina-superior img:nth-child(1) {
+      top: 20px;
+      left: 0;
+      width: 180px;
+    }
+
+    .esquina-superior img:nth-child(2) {
+      top: 40px;
+      left: 30px;
+      width: 120px;
+    }
+
+    .esquina-inferior img:nth-child(1) {
+      bottom: 0;
+      right: 0;
+      width: 480px;
+    }
+
+    .esquina-inferior img:nth-child(2) {
+      bottom: 0;
+      right: 0;
+      width: 360px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: #d4af37;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .bloque {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-left: 10px solid #d4af37;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .bloque img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .bloque h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      color: #003366;
+    }
+
+    .bloque p {
+      font-size: 1.1rem;
+      text-align: justify;
+      margin: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo" />
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior" />
+  </div>
+
+  <h1>Competencias Clave del Programa</h1>
+
+  <div class="contenedor">
+    <div class="bloque">
+      <img src="https://cdn-icons-png.flaticon.com/512/9987/9987283.png" alt="Procesamiento de datos" />
+      <div>
+        <h2>Alineadas al perfil de egreso</h2>
+        <p>Formación de técnicos laborales para el sector TIC con capacidades en procesamiento y gestión de datos, desarrolladas mediante módulos teóricos y prácticos adaptados al contexto.</p>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <img src="https://cdn-icons-png.flaticon.com/512/9068/9068756.png" alt="Normativas y estándares" />
+      <div>
+        <h2>Marco normativo y tendencias</h2>
+        <p>Basadas en la ocupación 3512 del CUOC (Auxiliar de procesamiento de datos). Se revisaron buenas prácticas en España y México sobre formación técnica en TIC.</p>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <img src="https://cdn-icons-png.flaticon.com/512/3176/3176290.png" alt="Formación transversal" />
+      <div>
+        <h2>Formación integral y transversal</h2>
+        <p>Competencias comunicativas e inglés técnico para Data Science refuerzan el trabajo en equipo, la ética y la comunicación efectiva en contextos reales de manejo de información.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo" />
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGRmcTlkaDV0cHl4dms5bG51YXV2ZWp0enN1YmVqM3A3eDZ3emw5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Epe3jp6eXKysAk6wo8/giphy.gif" alt="Búho manos" />
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva13.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span class="activa">11</span></a>
+  <a href="diapositiva13.html"><span>12</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+</body>
+</html>
+

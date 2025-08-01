@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Competencias y Perfil Ocupacional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-image: url('https://i.ibb.co/pvQ7SDDH/Imagen1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: black;
+      padding: 4rem 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.6rem;
+      color: #d4af37;
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 120%;
+      border-collapse: collapse;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      overflow: visible;
+      margin: 0 auto;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      text-align: left;
+      vertical-align: top;
+      position: relative;
+      overflow: visible;
+    }
+
+    th {
+      background-color: #005187;
+      color: white;
+    }
+
+    td.descripcion:hover .tooltip-box {
+      display: block;
+    }
+
+    .tooltip-box {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 320px;
+      background-color: #005187;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .columnas {
+      display: flex;
+      gap: 8rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .columna {
+      flex: 1 1 420px;
+      max-width: 500px;
+    }
+
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 5;
+    }
+
+    .esquina-superior {
+      top: 0;
+      left: 0;
+    }
+
+    .esquina-superior img:nth-child(1) {
+      width: 180px;
+      position: absolute;
+      top: 20px;
+      left: 0;
+    }
+
+    .esquina-superior img:nth-child(2) {
+      width: 120px;
+      position: absolute;
+      top: 40px;
+      left: 30px;
+    }
+
+    .esquina-inferior {
+      bottom: 0;
+      right: 0;
+    }
+
+    .esquina-inferior img:nth-child(1) {
+      width: 480px;
+    }
+
+    .esquina-inferior img:nth-child(2) {
+      width: 300px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="esquina-superior">
+  <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png">
+  <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png">
+</div>
+
+<h1>Competencias y Perfil Ocupacional</h1>
+<div class="columnas">
+  <div class="columna">
+    <table>
+      <tr><th>Tipo de Competencia</th><th>Código y Denominación</th></tr>
+      <tr>
+        <td>Competencias laborales específicas</td>
+        <td class="descripcion">
+          NSCL-220501099 – Ejecutar pruebas de software y procesar información de bases de datos<br>
+          NSCL-220501113 – Administrar bases de datos (SQL)<br>
+          NSCL-220501114 – Sistematizar datos masivos<br>
+          NSCL-220501115 – Visualizar e integrar datos
+          <div class="tooltip-box">Basadas en la correspondencia con las normas del CUOC y las necesidades del entorno TIC. Se justifican por el análisis de módulos prácticos como SQL, visualización y pruebas.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Competencias laborales generales</td>
+        <td class="descripcion">
+          NSCL-220501097 – Comunicar información<br>
+          NSCL-220501098 – Resolver problemas<br>
+          Inglés<br>
+          Iniciativa empresarial
+          <div class="tooltip-box">Surgen del análisis de competencias transversales necesarias para el trabajo colaborativo, comunicación técnica y resolución de problemas en datos, como se indica en los módulos de inglés y competencias comunicativas.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Competencias institucionales</td>
+        <td class="descripcion">
+          Proyecto de vida
+          <div class="tooltip-box">Están orientadas al desarrollo integral del estudiante con base en su proyecto de vida como lo promueve el TecMD.</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="columna">
+    <table>
+      <tr><th colspan="2">Perfil Ocupacional</th></tr>
+      <tr>
+        <td><strong>Ocupación principal</strong></td>
+        <td class="descripcion">
+          3512 - Auxiliar de procesamiento de datos y operador de computadora
+          <div class="tooltip-box">Código oficial asignado por el CUOC para tareas asociadas a procesamiento de datos y operación de equipos informáticos.</div>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Denominaciones ocupacionales</strong></td>
+        <td class="descripcion">
+          Auxiliar de procesamiento de datos<br>
+          Operador de computadora<br>
+          Asistente de procesamiento de información
+          <div class="tooltip-box">Cargos derivados del análisis ocupacional del CUOC que reflejan tareas específicas del egresado del programa.</div>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Ocupaciones relacionadas</strong></td>
+        <td class="descripcion">
+          Auxiliar administrativo<br>
+          Digitador<br>
+          Auxiliar de oficina<br>
+          Técnico de soporte en TI
+          <div class="tooltip-box">Estas ocupaciones comparten funciones clave como digitación, soporte informático y manejo de información, identificadas como relacionadas en el contexto del estudio.</div>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Funciones a desempeñar</strong></td>
+        <td class="descripcion">
+          Organizar, clasificar y procesar datos, operar equipos de cómputo, generar reportes y apoyar la gestión de la información en entornos empresariales y de servicios.
+          <div class="tooltip-box">Las funciones fueron definidas a partir del análisis de competencias del programa y necesidades del sector empresarial y de servicios.</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="esquina-inferior">
+  <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2FjZDl3MzhrY3E1cDUycGpqbzZ6bmg2MGx2d2F4am05eTAxdjF2ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/RNkqXgCcKD4BsBDXos/giphy.gif">
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva14.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span class="activa">12</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+</body>
+</html>
+

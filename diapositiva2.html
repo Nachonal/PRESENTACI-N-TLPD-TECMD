@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Denominación del Programa</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: justify;
+      padding: 2rem;
+      position: relative;
+      overflow-y: auto;
+    }
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 1;
+    }
+    .esquina-superior {
+      top: 0; left: 0;
+    }
+    .esquina-superior img:nth-child(1) {
+      height: 130px; width: 1950px; top: 0; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 150px; top: 30px; left: 30px; position: absolute; z-index: 10;
+    }
+    .esquina-inferior {
+      bottom: 0; right: 0;
+    }
+    .esquina-inferior img:nth-child(1) {
+      width: 220px; position: absolute; bottom: 0; right: 0; z-index: 2;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 200px; position: absolute; bottom: 0; right: 0; z-index: 2;
+    }
+    .contenido-central {
+      max-width: 1000px; width: 100%; animation: fadeInDown 1.2s ease-in-out;
+    }
+    h1 {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 2.5rem;
+      color: #ffbf00;
+      text-align: center;
+      margin: 0;
+      padding: 0 1rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    .tabla-info {
+      width: 100%; border-collapse: collapse; font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative;
+    }
+    .tabla-info th, .tabla-info td {
+      border: 1px solid #e2e2e2; padding: 10px 14px;
+      transition: transform 0.3s ease, background-color 0.3s;
+    }
+    .tabla-info th {
+      background-color: #003366; color: white; font-weight: bold;
+    }
+    .tabla-info tr:nth-child(even) td {
+      background-color: #f9f9f9;
+    }
+    .tabla-info td:hover {
+      background-color: #e0f0ff; transform: scale(1.05); z-index: 1; position: relative;
+    }
+    .tooltip {
+      display: none; position: absolute; background-color: #003366; color: white;
+      padding: 10px; border-radius: 6px; font-size: 0.95rem; width: 300px;
+      bottom: 100%; right: 0; margin-bottom: 10px; z-index: 99;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .tooltip::after {
+      content: ""; position: absolute; top: 100%; right: 10px;
+      border-width: 5px; border-style: solid;
+      border-color: #003366 transparent transparent transparent;
+    }
+    .tooltip-container {
+      position: relative;
+    }
+    .tooltip-container:hover .tooltip {
+      display: block;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Denominación del Programa</h1>
+
+  <div class="esquina-superior">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" alt="Fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Logo">
+  </div>
+
+  <div class="contenido-central">
+    <table class="tabla-info">
+      <tr><th>Denominación del programa</th><td class="tooltip-container">Técnico laboral en Procesamiento de Datos
+        <div class="tooltip">Basado en el Marco Nacional de Cualificaciones y la CUOC para facilitar el reconocimiento ocupacional.</div></td></tr>
+      <tr><th>Nivel de cualificación</th><td class="tooltip-container">Nivel 2 del Marco Nacional de Cualificaciones
+        <div class="tooltip">Corresponde al nivel técnico laboral por competencias establecido para desempeños de apoyo técnico.</div></td></tr>
+      <tr><th>Metodología</th><td class="tooltip-container">Distancia
+        <div class="tooltip">Permite flexibilidad para el estudiante y responde a la estrategia institucional para formación laboral.</div></td></tr>
+      <tr><th>El diseño curricular está basado en:</th><td class="tooltip-container">Cualificaciones, Normas de Competencia
+        <div class="tooltip">Alineado con el Marco Nacional de Cualificaciones y los referentes sectoriales ocupacionales.</div></td></tr>
+      <tr><th>Clasificación Categoría de ETDH</th><td class="tooltip-container">CINE-AC 90
+        <div class="tooltip">Educación para el Trabajo y Desarrollo Humano - ETDH Ley 115 de 1992 Ley 1064 de 2006 Decreto 4904 de 2009</div></td></tr>
+      <tr><th>Campo Amplio</th><td class="tooltip-container">06 – Tecnologías de la Información y Comunicación
+        <div class="tooltip">Área prioritaria a nivel nacional e internacional por su impacto en transformación digital.</div></td></tr>
+      <tr><th>Campo específico</th><td class="tooltip-container">061 – TIC
+        <div class="tooltip">Subcategoría que agrupa programas relacionados con desarrollo y procesamiento de datos.</div></td></tr>
+      <tr><th>Campo detallado</th><td class="tooltip-container">0612 – Base de Datos y Redes
+        <div class="tooltip">Código internacional que ubica el énfasis del programa en gestión de datos y conectividad.</div></td></tr>
+      <tr><th>Nombre de la ocupación</th><td class="tooltip-container">3512-Auxiliar de procesamiento de datos
+        <div class="tooltip">Ocupación identificada por el DANE y el Ministerio del Trabajo con funciones reconocidas.</div></td></tr>
+      <tr><th>Tipo de certificación</th><td class="tooltip-container">Certificado de Aptitud Ocupacional
+        <div class="tooltip">Documento legal que certifica las competencias del egresado según normatividad vigente.</div></td></tr>
+      <tr><th>Cantidad de horas del programa</th><td class="tooltip-container">1056 horas (448 teóricas, 608 prácticas)
+        <div class="tooltip">Se cumple con la exigencia de más del 50% de formación práctica, fortaleciendo las competencias laborales del estudiante.</div></td></tr>
+      <tr><th>Adscrito a la</th><td class="tooltip-container">Escuela de Tecnología Digital
+        <div class="tooltip">Estrategia académica que agrupa programas tecnológicos de impacto en la transformación digital.</div></td></tr>
+      <tr><th>Acuerdo de creación</th><td class="tooltip-container">058 del 08 de mayo del 2025 Consejo Superior
+        <div class="tooltip">Emitido por el máximo órgano institucional que avala formalmente la apertura del programa.</div></td></tr>
+    </table>
+  </div>
+
+  <div class="esquina-inferior">
+    
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNvNHQ5eDhkNHdxcWRnOWlrM21wa2ZxbGUwd3ZxNWsxOGd3dzZkbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1k2q2lOIdRP9N5g1G1/giphy.gif">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.addEventListener('dblclick', () => {
+        window.location.href = 'diapositiva3.html';
+      });
+    });
+  </script>
+<div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+  <style>
+    .barra-progreso {
+      display: flex;
+      gap: 6px;
+    }
+    .barra-progreso a span {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: black;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .barra-progreso span.activa {
+      background: #d4af37;
+      transform: scale(1.8);
+      color: white;
+    }
+  </style>
+  <div class="barra-progreso">
+    <a href="indice.html"><span>I</span></a>
+    <a href="diapositiva2.html"><span class="activa">1</span></a>
+    <a href="diapositiva3.html"><span>2</span></a>
+    <a href="diapositiva4.html"><span>3</span></a>
+    <a href="diapositiva5.html"><span>4</span></a>
+    <a href="diapositiva6.html"><span>5</span></a>
+    <a href="diapositiva7.html"><span>6</span></a>
+    <a href="diapositiva8.html"><span>7</span></a>
+    <a href="diapositiva9.html"><span>8</span></a>
+    <a href="diapositiva10.html"><span>9</span></a>
+    <a href="diapositiva11.html"><span>10</span></a>
+    <a href="diapositiva12.html"><span>11</span></a>
+    <a href="diapositiva13.html"><span>12</span></a>
+    <a href="diapositiva14.html"><span>13</span></a>
+    <a href="diapositiva15.html"><span>14</span></a>
+    <a href="diapositiva16.html"><span>15</span></a>
+    <a href="diapositiva17.html"><span>16</span></a>
+    <a href="diapositiva18.html"><span>17</span></a>
+  </div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Plan de Estudios del Programa</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      padding: 2rem;
+      position: relative;
+      min-height: 100vh;
+    }
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 10;
+    }
+    .esquina-superior {top: 0; left: 0;}
+    .esquina-superior img:nth-child(1) {
+      width: 180px; top: 20px; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 120px; top: 40px; left: 30px; position: absolute; z-index: 2;
+    }
+    .esquina-inferior {bottom: 0; right: 0; cursor: pointer;}
+    .esquina-inferior img:nth-child(1) {
+      width: 480px; bottom: 0; right: 0; position: absolute; z-index: 1;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 360px; bottom: 0; right: 0; position: absolute; z-index: 2;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #d4af37;
+      margin-bottom: 2rem;
+    }
+    .contenido {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      text-align: justify;
+    }
+    .paneles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      justify-items: center;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .panel {
+  background-color: #f2f2f2;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+}
+    .panel:hover {
+      transform: translateY(-5px);
+      background-color: #e6f7ff;
+    }
+    .titulo-panel {
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #002f66;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+    .nota-final {
+      margin-top: 2rem;
+      font-style: italic;
+      text-align: center;
+    }
+    .animacion {
+      display: none;
+      text-align: center;
+      margin-top: -20rem;
+      animation: expandir 0.6s ease-in-out forwards;
+      transform: scale(1.3);
+      background-color: #f0f8ff;
+      padding: 2rem;
+      border-radius: 20px;
+    }
+    @keyframes expandir {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .iconos-palabras {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .icono-item {
+      width: 120px;
+      text-align: center;
+    }
+    .icono-item img {
+      width: 60px;
+      margin-bottom: 0.5rem;
+    }
+    .oculto {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+  </style>
+  <script>
+    function mostrarAnimacion(id) {
+      document.querySelector('.paneles').classList.add('oculto');
+      document.querySelectorAll('.animacion').forEach(div => div.style.display = 'none');
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+  <div class="esquina-inferior" onclick="location.reload()">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNvNHQ5eDhkNHdxcWRnOWlrM21wa2ZxbGUwd3ZxNWsxOGd3dzZkbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1k2q2lOIdRP9N5g1G1/giphy.gif" alt="Cuadro superior">
+  </div>
+  <div class="contenido">
+    <h1>Plan de Estudios del Programa</h1>
+    <div class="paneles">
+      <div class="panel" onclick="mostrarAnimacion('intro')"><div class="titulo-panel">Introducción al Procesamiento de Datos</div></div>
+      <div class="panel" onclick="mostrarAnimacion('visualizacion')"><div class="titulo-panel">Visualización de Datos</div></div>
+      <div class="panel" onclick="mostrarAnimacion('sistematizacion')"><div class="titulo-panel">Sistematización de Datos Masivos</div></div>
+      <div class="panel" onclick="mostrarAnimacion('herramientas')"><div class="titulo-panel">Herramientas Informáticas</div></div>
+      <div class="panel" onclick="mostrarAnimacion('bases')"><div class="titulo-panel">Bases de Datos Relacionales</div></div>
+      <div class="panel" onclick="mostrarAnimacion('pruebas')"><div class="titulo-panel">Pruebas de Software</div></div>
+      <div class="panel" onclick="mostrarAnimacion('ingles')"><div class="titulo-panel">Inglés Técnico para Data Science</div></div>
+      <div class="panel" onclick="mostrarAnimacion('comunicacion')"><div class="titulo-panel">Competencias Comunicativas</div></div>
+      <div class="panel" onclick="mostrarAnimacion('proyecto')"><div class="titulo-panel">Proyecto Integrador</div></div>
+    </div>
+
+    <!-- BLOQUES DE ANIMACIÓN CON PALABRAS CLAVE E ICONOS-->
+    <div id="intro" class="animacion">
+      <h2>Introducción al Procesamiento de Datos</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/2422/2422364.png"><div>Datos</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/1444/1444547.png"><div>Ciclo de vida</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/3094/3094850.png"><div>Calidad</div></div>
+        <div class="icono-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbQnqIl4acJdOT-ob7KopV-klqj8dfqHPLTw&s"><div>Hojas de cálculo</div></div>
+      </div>
+    </div>
+
+    <div id="visualizacion" class="animacion">
+      <h2>Visualización de Datos</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/5432/5432747.png"><div>Dashboard</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/8899/8899687.png"><div>Gráficos</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/3078/3078980.png"><div>Decisiones</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/984/984021.png"><div>Visualización</div></div>
+      </div>
+    </div>
+
+    <div id="sistematizacion" class="animacion">
+      <h2>Sistematización de Datos Masivos</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://w7.pngwing.com/pngs/760/390/png-transparent-data-collection-computer-icons-information-big-data-data-collection-angle-text-computer-program.png"><div>Recopilación</div></div>
+        <div class="icono-item"><img src="https://www.shutterstock.com/image-vector/digital-transformation-line-icon-linear-600nw-2456750169.jpg"><div>Automatización</div></div>
+        <div class="icono-item"><img src="https://static.vecteezy.com/system/resources/previews/026/753/186/non_2x/database-icon-icon-for-your-website-mobile-presentation-and-logo-design-vector.jpg"><div>Bases de datos</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/9850/9850908.png"><div>ETL</div></div>
+        <div class="icono-item"><img src="https://static.vecteezy.com/system/resources/previews/010/434/619/non_2x/big-data-color-icon-cloud-computing-cloud-network-database-artificial-intelligence-isolated-illustration-vector.jpg"><div>Big Data</div></div>
+        <div class="icono-item"><img src="https://images.vexels.com/media/users/3/153815/isolated/preview/d5421e115be8ce021842d8a350bceed1-icono-de-estructura-organizativa.png"><div>Estructuración</div></div>
+      </div>
+    </div>
+
+    <div id="herramientas" class="animacion">
+      <h2>Herramientas Informáticas</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://www.shutterstock.com/image-photo/kazan-russia-april-11-2017-600nw-654438466.jpg"><div>Sistema operativo</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/1977/1977254.png"><div>Hojas de cálculo</div></div>
+        <div class="icono-item"><img src="https://images.vexels.com/content/113857/preview/4-design-software-and-formats-logos-9a25d0.png"><div>Software básico</div></div>
+        <div class="icono-item"><img src="https://i.pinimg.com/736x/53/fe/2d/53fe2dba208c7215dcd173c58b6698c1.jpg"><div>Aplicaciones</div></div>
+      </div>
+    </div>
+
+    <div id="bases" class="animacion">
+      <h2>Bases de Datos Relacionales</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/2721/2721273.png"><div>Base de datos</div></div>
+        <div class="icono-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sql_data_base_with_logo.svg/640px-Sql_data_base_with_logo.svg.png"><div>SQL</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/2301/2301812.png"><div>Relaciones</div></div>
+        <div class="icono-item"><img src="https://static.vecteezy.com/system/resources/previews/009/929/127/non_2x/logics-icon-logo-illustration-puzzle-symbol-template-for-graphic-and-web-design-collection-vector.jpg"><div>Estructura lógica</div></div>
+      </div>
+    </div>
+
+    <div id="pruebas" class="animacion">
+      <h2>Pruebas de Software</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/5145/5145588.png"><div>Validación</div></div>
+        <div class="icono-item"><img src="https://thumbs.dreamstime.com/b/software-bug-searching-icon-program-error-concept-flat-design-vector-illustration-83525071.jpg"><div>Bugs</div></div>
+        <div class="icono-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ1d78G4ObBpd-JpbsEbSvFJ-TUoslrzrL6w&s"><div>Casos de prueba</div></div>
+        <div class="icono-item"><img src="https://img.freepik.com/vector-premium/plantilla-diseno-logotipo-tecnologia-automatizacion-brazo-robotico-azul-oscuro-amarillo_626654-302.jpg"><div>Automatización</div></div>
+      </div>
+    </div>
+
+    <div id="ingles" class="animacion">
+      <h2>Inglés Técnico para Data Science</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2WHlnjAeHfspcCvBDilBcrhocHDOwTBOqEQ&s"><div>Lectura técnica</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/2972/2972267.png"><div>Vocabulario TIC</div></div>
+        <div class="icono-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QOsbCnbtKWtXq6-VraGZW9LjH12CNk6SLGv9_oXLN2_noVljtQJ0wC_9GttyiL10yYw&usqp=CAU"><div>Comprensión auditiva</div></div>
+        <div class="icono-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2tlvRu06FLe0g86Qqgb-oVbB0xWnQniBj9g&s"><div>Expresión escrita</div></div>
+      </div>
+    </div>
+
+    <div id="comunicacion" class="animacion">
+      <h2>Competencias Comunicativas</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/9068/9068773.png"><div>Lectura crítica</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/1042/1042347.png"><div>Argumentación</div></div>
+        <div class="icono-item"><img src="https://cdn-icons-png.flaticon.com/512/4211/4211783.png"><div>Producción textual</div></div>
+        <div class="icono-item"><img src="https://media.licdn.com/dms/image/v2/C4E12AQHK5ZIEMUTgAA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1538605643370?e=2147483647&v=beta&t=xg62ra7CH3Y3PKKEAQeCs-R1ERJ_iNsMUmNE2nDug1w"><div>Expresión oral</div></div>
+      </div>
+    </div>
+
+    <div id="proyecto" class="animacion">
+      <h2>Proyecto Integrador</h2>
+      <div class="iconos-palabras">
+        <div class="icono-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9eyjO4kKQymtIY0NcnjLCrfPr-Oiz2zCRcQ&s"><div>Práctica Laboral</div></div>
+        <div class="icono-item"><img src="https://w7.pngwing.com/pngs/166/769/png-transparent-computer-icons-report-others-service-logo-business.png"><div>Informe final</div></div>
+      </div>
+    </div>
+
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva15.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>12</span></a>
+  <a href="diapositiva14.html"><span class="activa">13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+
+
+</body>
+</html>

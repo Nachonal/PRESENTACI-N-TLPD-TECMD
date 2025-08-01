@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil del Egresado</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: justify;
+      padding: 2rem;
+      position: relative;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 10;
+    }
+    .esquina-superior {
+      top: 0; left: 0;
+    }
+    .esquina-superior img:nth-child(1) {
+      width: 180px; top: 20px; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 120px; top: 40px; left: 30px; position: absolute; z-index: 2;
+    }
+    .esquina-inferior {
+      bottom: 0; right: 0;
+    }
+    .esquina-inferior img:nth-child(1) {
+      width: 480px; position: absolute; bottom: 0; right: 0; z-index: 1;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 360px; position: absolute; bottom: 0; right: 0; z-index: 2;
+    }
+    .contenido-central {
+      max-width: 1000px;
+      width: 100%;
+      margin-top: 1rem;
+      animation: fadeInDown 1.2s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #d4af37;
+      text-align: center;
+      margin-bottom: 0rem;
+    }
+    .keywords {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    .keyword {
+      position: relative;
+      background-color: #003366;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #003366;
+      background: transparent;
+      font-size: 0.95rem;
+      margin-top: 6px;
+      z-index: 100;
+      text-align: center;
+      max-width: 280px;
+    }
+    .keyword:hover .tooltip {
+      display: block;
+    }
+    .venn-diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 1000px;
+      height: 750px;
+      margin-top: 0rem;
+    }
+    .circle {
+      position: absolute;
+      width: 490px;
+      height: 490px;
+      border-radius: 50%;
+      opacity: 0.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+    .circle1 { background-color: #003366; left: 40px; top: 80px; }
+    .circle2 { background-color: #b8860b; left: 360px; top: 80px; color: black; }
+    .circle3 { background-color: #006699; left: 200px; top: 320px; }
+    .venn-label {
+      position: absolute;
+      font-size: 0.95rem;
+      max-width: 280px;
+      text-align: center;
+      color: #003366;
+      font-weight: 500;
+    }
+    .label-esp { top: 50px; left: 30px; }
+    .label-gen { top: 50px; left: 800px; color: #000; }
+    .label-ins { top: 660px; left: 430px; font-weight: bold; }
+    .label-esp-gen { top: 100px; left: 320px; }
+    .label-esp-ins { top: 360px; left: 130px; }
+    .label-gen-ins { top: 360px; right: 130px; }
+    .label-centro { top: 390px; left: 50%; transform: translateX(-50%); font-weight: bold; color: #003366; }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<div class="esquina-superior">
+  <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Fondo">
+  <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Logo">
+</div>
+<div class="contenido-central">
+  <h1>Perfil del Egresado</h1>
+  <div class="venn-diagram">
+    <div class="circle circle1"></div>
+    <div class="venn-label label-esp">Competencias laborales específicas</div>
+    <div class="circle circle2"></div>
+    <div class="venn-label label-gen" style="top: 50px; left: 720px; color: #003366; font-weight: bold;">Competencias laborales generales</div>
+    <div class="circle circle3"></div>
+    <div class="venn-label label-ins" style="top: 720px; left: 680px; font-weight: bold;">Competencias institucionales</div>
+    <div class="venn-label label-esp-gen" style="top: 200px; left: 370px; max-width: 160px;color: #ffffff">Aplicar habilidades técnicas en contextos colaborativos y comunicar hallazgos de datos.</div>
+    <div class="venn-label label-esp-ins" style="top: 460px; left: 150px;color: #ffffff">Automatizar y procesar datos con sentido ético y visión profesional.</div>
+    <div class="venn-label label-gen-ins" style="top: 460px; left: 480px;color: #ffffff">Ética profesional, ciudadanía digital y responsabilidad en el trabajo colaborativo.</div>
+    <div class="venn-label label-centro" style="top: 330px; left: 450px; max-width: 180px; font-weight: bold; color: #ffffff;">Egresado integral que domina herramientas, trabaja en equipo, se comunica con claridad y actúa con ética.</div>
+    <div class="venn-label" style="top: 200px; left: 100px; color: #ffffff">Uso de herramientas como hojas de cálculo, bases de datos y software especializado para análisis y organización de información.</div>
+    <div class="venn-label" style="top: 210px; left: 580px; max-width: 160px;color: #ffffff">Comunicación efectiva, trabajo en equipo, resolución de problemas en entornos laborales.</div>
+    <div class="venn-label" style="top: 600px; left: 320px;color: #ffffff">Proyecto de vida, formación continua y compromiso con el aprendizaje en TIC.</div>
+  </div>
+</div>
+<div class="esquina-inferior">
+  <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Fondo inferior">
+  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnptZmMzNmQ2aGJ6aGp2d25kd2lhd2Q4aHJ2b2ZiYTM5NTEwOWVtMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SJMw2tKnPdkM6XyczL/giphy.gif" alt="Logo inferior">
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva12.html';
+    });
+  });
+</script>
+
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span class="activa">10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>13</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+</body>
+</html>
+

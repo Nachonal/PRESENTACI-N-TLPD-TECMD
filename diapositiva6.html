@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Escucha Activa y Construcción Colectiva</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 2rem;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .esquina-superior {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .esquina-superior img {
+      position: absolute;
+    }
+
+    .esquina-superior img:nth-child(1) {
+      width: 180px;
+      height: auto;
+      top: 20px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .esquina-superior img:nth-child(2) {
+      width: 120px;
+      top: 40px;
+      left: 30px;
+      z-index: 2;
+    }
+
+    .esquina-inferior {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+    }
+
+    .esquina-inferior img {
+      position: absolute;
+    }
+
+    .esquina-inferior img:nth-child(1) {
+      width: 480px;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .esquina-inferior img:nth-child(2) {
+      width: 250px;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+    }
+
+    .contenido-central {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      max-width: 1200px;
+      animation: fadeInDown 1.2s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    .columna-circulo, .columna-texto {
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #d4af37;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .botones-padlets {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .botones-padlets a {
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      width: fit-content;
+    }
+
+    .padlet1 {
+      background-color: #003366;
+      color: white;
+    }
+
+    .padlet2 {
+      background-color: #d4af37;
+      color: #003366;
+    }
+
+    .circulo-container {
+      position: relative;
+      width: 420px;
+      height: 420px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, white 65%, transparent 100%), conic-gradient(#00336610 0% 50%, #d4af3710 50% 100%);
+      border: 8px solid #d4af37;
+    }
+
+    .punto {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: bold;
+      position: absolute;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .institucional {
+      background-color: #d4af37;
+      color: #003366;
+    }
+
+    .tooltip {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      z-index: 9999;
+      display: none;
+    }
+
+    .punto:hover + .tooltip {
+      display: block;
+    }
+
+    .texto-descriptivo {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGRmcTlkaDV0cHl4dms5bG51YXV2ZWp0enN1YmVqM3A3eDZ3emw5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Epe3jp6eXKysAk6wo8/giphy.gif" alt="Cuadro superior">
+  </div>
+
+  <div class="contenido-central">
+    <div class="columna-circulo">
+      <div class="circulo-container">
+        <script>
+          const azules = [
+            ['AB InBev', 'Diego Sánchez<br>Vocero Transformación Digital'],
+            ['HPE', 'Juan Francisco Dueñas<br>Representante País – Colombia'],
+            ['Aquinas', 'Diego Vargas<br>Representante Regional'],
+            ['Claro', 'Rodrigo Neira<br>Ejecutivo o Gerente'],
+            ['Baloto', 'Andrés Vargas<br>Directivo o Gerente'],
+            ['Topaz', 'Clara Rojas<br>Directora / Grupo Stefanini'],
+            ['SII Group', 'Marsella Mantilla<br>Directora Ejecutiva'],
+            ['Bioclínicos', 'Juan Carlos Pedreros<br>Directivo Técnico'],
+            ['DataCRM', 'Vanessa Ramírez<br>Directora de Producto'],
+            ['Grand Casino', 'Diego Llanos<br>Director Tecnología'],
+            ['ADCOM', 'Pablo Romero<br>Director Creativo']
+          ];
+          const amarillos = [
+            ['Vicerrectoría', 'Marcela Franco Pinilla<br>Vicerrectora Académica'],
+            ['Curricular', 'Yully Patricia Gómez Gómez<br>Líder Curricular'],
+            ['Curricular', 'Edgar Iván Vera Guillén<br>Líder Curricular'],
+            ['Tecnología', 'José Mauricio Moreno Bueno<br>Líder de Tecnología'],
+            ['Diseño', 'Jose Luis Rodriguez Cortes<br>Diseñador Curricular']
+          ];
+          let html = '';
+          azules.forEach((item, i) => {
+            const angle = (i / azules.length) * 2 * Math.PI;
+            const r = 190;
+            const x = 210 + r * Math.cos(angle) - 35;
+            const y = 210 + r * Math.sin(angle) - 35;
+            html += `<div class='punto' style='left:${x}px;top:${y}px;'>${item[0]}</div><div class='tooltip'>${item[1]}</div>`;
+          });
+          amarillos.forEach((item, i) => {
+            const angle = (i / amarillos.length) * 2 * Math.PI;
+            const r = 100;
+            const x = 210 + r * Math.cos(angle) - 35;
+            const y = 210 + r * Math.sin(angle) - 35;
+            html += `<div class='punto institucional' style='left:${x}px;top:${y}px;'>${item[0]}</div><div class='tooltip'>${item[1]}</div>`;
+          });
+          document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".circulo-container").innerHTML += html;
+          });
+        </script>
+      </div>
+    </div>
+    <div class="columna-texto">
+      <h1>Escucha Activa y Construcción Colectiva</h1>
+      <p class="texto-descriptivo">
+        Esta representación destaca los aportes tanto de los representantes del sector productivo como del equipo académico de TecMD. Cada uno de los participantes contribuyó con su visión estratégica para construir colectivamente el perfil profesional del nuevo programa.
+      </p>
+      <div class="botones-padlets">
+        <a class="padlet1" href="https://padlet.com/Curriculo_TecMD/ideaci-n-tecmd-industria-tu-visi-n-transforma-1fpspahyl2xx2eqh" target="_blank">Ver Padlet Industria 1</a>
+        <a class="padlet2" href="https://padlet.com/Curriculo_TecMD/ideaci-n-tecmd-industria-jjav2pq2s48gcppn" target="_blank">Ver Padlet Industria 2</a>
+      </div>
+    </div>
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva7.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span class="activa">5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>13</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+</body>
+</html>
+

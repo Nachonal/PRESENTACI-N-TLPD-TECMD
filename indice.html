@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Índice desde Denominación</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        height: 100vh;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .esquina-superior {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+      .esquina-superior img {
+        position: absolute;
+      }
+      .esquina-superior img:nth-child(1) {
+        width: 180px;
+        height: auto;
+        top: 20px;
+        left: 0;
+        z-index: 1;
+      }
+      .esquina-superior img:nth-child(2) {
+        width: 120px;
+        top: 40px;
+        left: 30px;
+        z-index: 2;
+      }
+      .esquina-inferior {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+      }
+      .esquina-inferior img {
+        position: absolute;
+      }
+      .esquina-inferior img:nth-child(1) {
+        width: 480px;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+      }
+      .esquina-inferior img:nth-child(2) {
+        width: 360px;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+      }
+      .contenido-central {
+        max-width: 1000px;
+        padding: 2rem;
+        animation: fadeInDown 1.2s ease-in-out;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        width: 100%;
+      }
+      .contenido-central h1 {
+        font-size: 2rem;
+        color: #d4af37;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      .indice {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f5f5f5;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: #003366;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+      .item:hover {
+        transform: scale(1.01);
+        background: #e0eaff;
+      }
+      .item .titulo {
+        font-weight: 500;
+      }
+      .item .circulos {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+      }
+      .item .circulos a {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #d4af37;
+        color: white;
+        font-size: 0.85rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+      .item .circulos a:hover {
+        background: #003366;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="esquina-superior">
+      <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+      <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+    </div>
+    <div class="esquina-inferior">
+      <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHgyMThoYXE3cmx3ZGt5ODk1NHZ0amhzd3RvcjU0bXZ2enl4aTdkYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kt15ZPcfLyzI3aMApI/giphy.gif" alt="Cuadro superior">
+    </div>
+    <div class="contenido-central">
+      <h1>Índice de Diapositivas</h1>
+      <div class="indice">
+        <div class="item">
+          <span class="titulo">Introducción</span>
+          <div class="circulos">
+            <a href="diapositiva1.html">1</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Nombre del Programa</span>
+          <div class="circulos">
+            <a href="diapositiva2.html">2</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Denominación y Justificación</span>
+          <div class="circulos">
+            <a href="diapositiva3.html">3</a>
+            <a href="diapositiva4.html">4</a>
+            <a href="diapositiva5.html">5</a>
+            <a href="diapositiva6.html">6</a>
+            <a href="diapositiva7.html">7</a>
+            <a href="diapositiva8.html">8</a>
+            <a href="diapositiva9.html">9</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Objetivos del Programa</span>
+          <div class="circulos">
+            <a href="diapositiva10.html">10</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Perfil del Egresado</span>
+          <div class="circulos">
+            <a href="diapositiva11.html">11</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Competencias Clave y Específicas</span>
+          <div class="circulos">
+            <a href="diapositiva12.html">12</a>
+            <a href="diapositiva13.html">13</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Plan de Estudios y Rutas</span>
+          <div class="circulos">
+            <a href="diapositiva14.html">14</a>
+            <a href="diapositiva15.html">15</a>
+            <a href="diapositiva16.html">16</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Rasgos Diferenciadores</span>
+          <div class="circulos">
+            <a href="diapositiva17.html">17</a>
+          </div>
+        </div>
+        <div class="item">
+          <span class="titulo">Cierre Institucional y Proyección</span>
+          <div class="circulos">
+            <a href="diapositiva18.html">18</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva2.html';
+    });
+  });
+</script>
+  </body>
+</html>

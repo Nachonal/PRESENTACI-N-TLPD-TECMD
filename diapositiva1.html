@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio Presentación</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+background-image: url('https://i.ibb.co/NdbtHJpR/fondo-amarillo.png');
+  background-size: cover;
+background-repeat: no-repeat;
+ background-position: center center; 
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 10;
+    }
+
+    .esquina-superior {
+      top: 0;
+      left: 0;
+    }
+
+    .esquina-inferior {
+      bottom: 0;
+      right: 0;
+    }
+
+    .esquina-superior img:nth-child(1) {
+      width: 260px;
+      top: 0px;
+      left: 0;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .esquina-superior img:nth-child(2) {
+      width: 120px;
+      top: 0px;
+      left: 30px;
+      position: absolute;
+      z-index: 2;
+    }
+.imagen-izquierda {
+  position: fixed;
+  top: 130px;
+  left: 450px;
+  z-index: 3;
+}
+
+.imagen-izquierda img {
+  width: 100px;
+height: auto;
+}
+
+    .esquina-inferior img:nth-child(1) {
+      width: 310px;
+      bottom: 660px;
+      right: 0;
+top: 0px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .esquina-inferior img:nth-child(2) {
+      width: 300px;
+      bottom: 450px;
+      right: 0;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .contenido-central {
+      max-width: 1000px;
+      text-align: center;
+      z-index: 5;
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .contenido-central h1 {
+      font-size: 3.8rem;
+      color: #003366;
+    }
+
+    .contenido-central h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .contenido-central p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .gear {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      animation: spin 36s linear infinite;
+    }
+
+    .gear-center {
+      width: 256px;
+      height: 256px;
+      left: 35%;
+      top: 65%;
+      transform: translate(-50%, -50%);
+      animation-direction: reverse;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    text {
+      transform-box: fill-box;
+      transform-origin: center;
+      pointer-events: none;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="esquina-superior">
+    
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+ 
+  </div>
+
+  <div class="esquina-inferior">
+    
+   <img src="https://i.ibb.co/sJzTm4zX/cuadros-balncos.png" alt="Bandera superior"> 
+      
+  </div>
+<div class="imagen-izquierda">
+  <img src="https://i.ibb.co/m5374KJ2/FLECXHAS-BALNCAS.png" alt="GIF izquierdo">
+</div>
+
+  <div class="contenido-central">
+    <h1>PROPUESTA EDUCATIVA</h1>
+    <h2>TÉCNICO LABORAL EN PROCESAMIENTO DE DATOS</h2>
+<p>Una respuesta formativa a la transformación digital y a la demanda de talento analítico en Bogotá<p>
+    <p>José Luis Rodríguez Cortés<br>Diseñador Curricular</p>
+  </div>
+
+  <!-- Engranaje central TLPD -->
+  <svg class="gear gear-center" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="35" fill="#FFD700" />
+    <g>
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(0,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(30,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(60,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(90,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(120,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(150,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(180,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(210,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(240,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(270,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(300,50,50)" />
+      <polygon points="48,5 52,5 56,15 44,15" fill="#999" transform="rotate(330,50,50)" />
+    </g>
+    <text x="50" y="50" fill="#003366" font-size="10" font-weight="bold">TLPD</text>
+  </svg>
+
+  <!-- Engranajes alrededor -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const posiciones = [
+        [0, -180], [127, -127], [180, 0], [127, 127],
+        [0, 180], [-127, 127], [-180, 0], [-127, -127]
+      ];
+
+      const textos = [
+        "Datos", "SQL", "Python", "Excel",
+        "ETL", "Calidad", "Ética", "Looker"
+      ];
+
+      const colores = [
+        "#1E90FF", "#FFD700", "#4682B4", "#DAA520",
+        "#87CEFA", "#F4A460", "#6495ED", "#FFCC00"
+      ];
+
+      posiciones.forEach(([dx, dy], i) => {
+        const gear = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        gear.setAttribute("class", "gear");
+        gear.setAttribute("viewBox", "0 0 100 100");
+        gear.setAttribute("style", `left: calc(35% + ${dx}px); top: calc(65% + ${dy}px); width: 160px; height: 160px;`);
+        gear.innerHTML = `
+          <circle cx="50" cy="50" r="35" fill="${colores[i]}" />
+          <g>
+            ${Array.from({ length: 12 }, (_, j) =>
+              `<polygon points="48,5 52,5 56,15 44,15" fill="#333" transform="rotate(${j * 30},50,50)" />`
+            ).join('')}
+          </g>
+          <text x="50" y="50" fill="#fff" font-size="11" font-weight="bold">${textos[i]}</text>
+        `;
+        document.body.appendChild(gear);
+      });
+    });
+  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'indice.html';
+    });
+  });
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Plan de Estudios del Programa</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      padding: 2rem;
+      position: relative;
+      min-height: 100vh;
+    }
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 10;
+    }
+    .esquina-superior {top: 0; left: 0;}
+    .esquina-superior img:nth-child(1) {
+      width: 180px; top: 20px; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 120px; top: 40px; left: 30px; position: absolute; z-index: 2;
+    }
+    .esquina-inferior {bottom: 0; right: 0; cursor: pointer;}
+    .esquina-inferior img:nth-child(1) {
+      width: 480px; bottom: 0; right: 0; position: absolute; z-index: 1;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 220px; bottom: 0; right: 0; position: absolute; z-index: 2;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+    .leyenda {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .leyenda span {
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+      margin: 0 0.5rem;
+      font-weight: bold;
+      color: white;
+    }
+    .especifica { background-color: #003366; }
+    .institucional { background-color: #d4af37; color: #003366 !important; }
+    .transversal { background-color: #f1c40f; color: #003366 !important; }
+    .paneles-doble-columna {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .columna {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .panel {
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+      text-transform: uppercase;
+      color: white;
+    }
+    .panel:hover {
+      transform: translateY(-5px);
+    }
+    .animacion {
+      display: none;
+      text-align: center;
+      margin-top: -30rem;
+      animation: expandir 0.6s ease-in-out forwards;
+      transform: scale(1.3);
+      background-color: #f0f8ff;
+      padding: 2rem;
+      border-radius: 20px;
+    }
+    @keyframes expandir {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .oculto {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+    table {
+      margin: 1rem auto;
+      font-size: 1.2rem;
+    }
+    td { padding: 0.5rem 1rem; }
+  </style>
+  <script>
+    function mostrarAnimacion(id) {
+      document.querySelector('.paneles-doble-columna').classList.add('oculto');
+      document.querySelectorAll('.animacion').forEach(div => div.style.display = 'none');
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+  <div class="esquina-inferior" onclick="location.reload()">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNvNHQ5eDhkNHdxcWRnOWlrM21wa2ZxbGUwd3ZxNWsxOGd3dzZkbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1k2q2lOIdRP9N5g1G1/giphy.gif" alt="Cuadro superior">
+  </div>
+  <h1>Plan de Estudios del Programa</h1>
+  <div class="leyenda" style="margin-top: 6rem;">
+    <span class="especifica">Formación Específica</span>
+    <span class="institucional">Formación Institucional</span>
+    <span class="transversal">Formación Transversal</span>
+  </div>
+  <div class="paneles-doble-columna" style="margin-top: 5rem;">
+    <div class="columna">
+      <h2 style="text-align:center; color:#002f66;">Primer Periodo</h2>
+      <div class="panel especifica" onclick="mostrarAnimacion('intro')">Introducción al Procesamiento de Datos</div>
+      <div class="panel especifica" onclick="mostrarAnimacion('herramientas')">Herramientas Informáticas</div>
+      <div class="panel especifica" onclick="mostrarAnimacion('pruebas')">Pruebas de Software</div>
+      <div class="panel transversal" onclick="mostrarAnimacion('ingles')">Inglés Técnico para Data Science</div>
+      <div class="panel institucional" onclick="mostrarAnimacion('comunicacion')">Competencias Comunicativas</div>
+    </div>
+    <div class="columna">
+      <h2 style="text-align:center; color:#d4af37;">Segundo Periodo</h2>
+      <div class="panel especifica" onclick="mostrarAnimacion('proyecto')">Proyecto Integrador</div>
+      <div class="panel especifica" onclick="mostrarAnimacion('visualizacion')">Visualización de Datos</div>
+      <div class="panel especifica" onclick="mostrarAnimacion('sistematizacion')">Sistematización de Datos Masivos</div>
+      <div class="panel especifica" onclick="mostrarAnimacion('bases')">Bases de Datos Relacionales</div>
+    </div>
+  </div>
+<!-- Paneles emergentes comienzan aquí -->
+<div id="intro" class="animacion">
+  <h2>Introducción al Procesamiento de Datos</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>48 horas (24 teóricas, 24 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica - práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    Esta asignatura introduce los conceptos fundamentales sobre el manejo y procesamiento de datos. Se abordan temas como el ciclo de vida del dato, la calidad de la información, y el uso inicial de herramientas básicas como hojas de cálculo.
+  </p>
+</div>
+<div id="herramientas" class="animacion">
+  <h2>Herramientas Informáticas para Procesamiento de Datos</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>96 horas (48 teóricas, 48 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica - práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    Se exploran herramientas de software fundamentales como hojas de cálculo, procesadores de texto y presentaciones. Se orienta al uso eficiente de estas herramientas en el contexto del procesamiento de datos.
+  </p>
+</div>
+<div id="pruebas" class="animacion">
+  <h2>Pruebas de Software</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>48 horas (24 teóricas, 24 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica - práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    Este módulo se enfoca en el desarrollo de habilidades para la planificación, ejecución y documentación de pruebas funcionales y no funcionales en software, identificando errores y asegurando la calidad del producto.
+  </p>
+</div>
+<div id="ingles" class="animacion">
+  <h2>Inglés Técnico para Data Science</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>96 horas (64 teóricas, 32 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica - práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    El curso fortalece el vocabulario técnico y habilidades comunicativas en inglés, específicamente orientadas al ámbito del análisis y procesamiento de datos, lectura de documentación técnica y elaboración de informes.
+  </p>
+</div>
+<div id="comunicacion" class="animacion">
+  <h2>Competencias Comunicativas</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>96 horas (64 teóricas, 32 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    Este módulo busca desarrollar la capacidad para comunicarse de forma clara y efectiva en distintos contextos, haciendo énfasis en la argumentación, redacción y comprensión de textos técnicos.
+  </p>
+</div>
+<div id="proyecto" class="animacion">
+  <h2>Proyecto Integrador - Prácticas</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>288 horas (48 teóricas, 240 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    Este espacio permite la integración de los conocimientos adquiridos a través de un proyecto práctico supervisado. Los estudiantes enfrentan retos reales del entorno laboral para aplicar sus competencias.
+  </p>
+</div>
+<div id="visualizacion" class="animacion">
+  <h2>Visualización de Datos</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>96 horas (48 teóricas, 48 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica - práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    En este módulo se desarrollan habilidades para representar datos de manera visual utilizando gráficos y paneles interactivos. Se trabaja con herramientas digitales para facilitar la toma de decisiones basada en datos.
+  </p>
+</div>
+<div id="sistematizacion" class="animacion">
+  <h2>Sistematización de Datos Masivos</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>144 horas (72 teóricas, 72 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica - práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    Este módulo aborda el procesamiento de grandes volúmenes de datos mediante herramientas automatizadas. Los estudiantes aprenden técnicas para recopilar, organizar y almacenar datos masivos de forma eficiente y segura.
+  </p>
+</div>
+<div id="bases" class="animacion">
+  <h2>Administración de Bases de Datos Relacionales</h2>
+  <table>
+    <tr><td><strong>Duración:</strong></td><td>144 horas (72 teóricas, 72 prácticas)</td></tr>
+    <tr><td><strong>Tipología:</strong></td><td>Teórica - práctica</td></tr>
+  </table>
+  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; text-align: justify;">
+    Los estudiantes adquieren habilidades para diseñar, implementar y administrar bases de datos relacionales, aplicando lenguajes como SQL y normas de integridad y seguridad en el manejo de información.
+  </p>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva16.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>12</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span class="activa">14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+
+</body>
+</html>
+

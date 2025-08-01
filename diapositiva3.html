@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECMD</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      flex-direction: column;
+      font-size: 1.4rem;
+
+    }
+       .esquina-superior { top: 0; left: 0; }
+    .esquina-inferior { bottom: 0; right: 0; }
+    
+
+    
+    }
+    p0px;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 1;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 200px;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 3;
+    }
+    .esquina-superior img:nth-child(1) {
+      height: 130px; width: 1950px; top: 0; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 160px;
+      top: 20px;
+      left: 40px;
+      position: absolute;
+      z-index: 10;
+}
+   
+     h1 {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 2.5rem;
+      color: #ffbf00;
+      text-align: center;
+      margin: 0;
+      padding: 0 1rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .contenido-central {
+      z-index: 5;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      margin: 0 auto;
+    }
+    .imagen-izquierda {
+      flex-shrink: 0;
+      border: 10px solid #003366;
+      border-radius: 16px;
+      padding: 0.5rem;
+    }
+    .imagen-izquierda img {
+      width: 350px;
+      border-radius: 8px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+    .contenido-interactivo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 10px solid #d4af37;
+      border-radius: 16px;
+      padding: 1rem;
+    }
+    .donut-chart {
+      position: relative;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #003366 0% 25%,
+        #d4af37 25% 50%,
+        #3B6BA5 50% 75%,
+        #7B9CC1 75% 100%
+      );
+      margin-bottom: 1rem;
+    }
+    .donut-hole {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 160px;
+      height: 160px;
+      background: white;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .donut-hole::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://tecmd.edu.co/wp-content/uploads/2025/01/Buho-circulo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+    }
+    .donut-labels {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .donut-labels div {
+      width: 50%;
+      padding: 0.7rem;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #003366;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .donut-labels div:hover {
+      transform: scale(1.08);
+    }
+    .detalle {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fffbea;
+      border-left: 8px solid #d4af37;
+      border-radius: 10px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.2);
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" onclick="cambiarDetalle('detalle1')" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" style="width: 20px; position: absolute; bottom: 0; right: 0; z-index: 2;" alt="Cuadro fondo">
+    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWF1cHM3MTdvNnRhbmdlMXMwcXl3NzhhNzZpMXQ4MWwwNjB3ZWlvZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/nJXuZwbtR0U8z5LgHN/giphy.gif" style="position: absolute; bottom: 0; right: 0; z-index: 4; width: 120px;; width: 220px" alt="Cuadro superior">
+  </div>
+  <h1 class="titulo-principal">Politécnico Minuto de Dios</h1>
+  <div class="contenido-central">
+    <div class="imagen-izquierda">
+      <img src="https://yt3.googleusercontent.com/foMJICgUdzynisSMYJu-RHIxdPsHeQbOPdEndV6IaQZUIPh_v9PJg5r-OnxIU7Qns8gtosB3SQ=s900-c-k-c0x00ffffff-no-rj" alt="TECMD">
+    </div>
+    <div class="contenido-interactivo">
+      <div class="donut-chart">
+        <div class="donut-hole"></div>
+        <div class="donut-labels">
+          <div onclick="cambiarDetalle('detalle1')">Modelo Educativo</div>
+          <div onclick="cambiarDetalle('detalle2')" style="color: #d4af37;">Principios</div>
+          <div onclick="cambiarDetalle('detalle3')" style="color: #d4af37;">Experiencia Digital</div>
+          <div onclick="cambiarDetalle('detalle4')">Cultura Digital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="detalle1" class="detalle">El modelo del TECMD pone al estudiante en el centro del proceso, promoviendo la autonomía, el aprendizaje activo y el trabajo colaborativo en ambientes mediados por tecnología.</div>
+  <div id="detalle2" class="detalle">Los principios orientadores del TECMD son Cultura Digital, Innovación, Agilismo, Democratización, Simplicidad, Pasión y Humanismo.</div>
+  <div id="detalle3" class="detalle">La experiencia de formación es mayoritariamente digital, permitiendo flexibilidad, interacción y acompañamiento a través de plataformas tecnológicas.</div>
+  <div id="detalle4" class="detalle">La Cultura Digital es una capacidad para interactuar con ecosistemas digitales, entendida como una competencia humana y social.</div>
+  <script>
+    function cambiarDetalle(id) {
+      document.querySelectorAll('.detalle').forEach(el => el.style.display = 'none');
+      const target = document.getElementById(id);
+      if (target) target.style.display = 'block';
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.addEventListener('dblclick', () => {
+        window.location.href = 'diapositiva4.html';
+      });
+    });
+  </script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span class="activa">2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>13</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pertinencia del Programa</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 10;
+    }
+
+    .esquina-superior {
+      top: 0; left: 0;
+    }
+
+    .esquina-superior img:nth-child(1) {
+      width: 180px; top: 20px; left: 0; position: absolute; z-index: 1;
+    }
+
+    .esquina-superior img:nth-child(2) {
+      width: 120px; top: 40px; left: 30px; position: absolute; z-index: 2;
+    }
+
+    .esquina-inferior {
+      bottom: 0; right: 0;
+    }
+
+    .esquina-inferior img:nth-child(1) {
+      width: 480px; position: absolute; bottom: 0; right: 0; z-index: 1;
+    }
+
+    .esquina-inferior img:nth-child(2) {
+      width: 250px; position: absolute; bottom: 10px; right: 10px; z-index: 2;
+      cursor: pointer;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      color: #d4af37;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .dato-impacto {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      justify-items: center;
+      margin-top: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .circulo {
+      width: 180px;
+      height: 180px;
+      background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWY4YXYxcXBwa3N0ZjgwN3RsaGtydXZpeGl6Y2ZiODUyNmZvb2ZwcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6S3utVsB9Smq22GCDU/giphy.gif');
+      background-size: cover;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #003366;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .circulo span {
+      display: none;
+      background-color: rgba(255,255,255,0.85);
+      padding: 0.2em 0.6em;
+      border-radius: 10px;
+    }
+
+    .circulo:nth-child(odd) span {
+      color: #003366;
+    }
+
+    .circulo:nth-child(even) span {
+      color: #d4af37;
+    }
+
+    .descripcion {
+      display: none;
+      text-align: center;
+      font-size: 1.6rem;
+      padding: 2rem;
+      color: black;
+      background-color: white;
+      border-radius: 15px;
+      margin-top: 1.5rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .ampliado {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50vw;
+      height: 50vw;
+      border-radius: 50%;
+      font-size: 3rem;
+      z-index: 999;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      text-align: center;
+      padding: 3rem;
+      background-image: url('https://i.ibb.co/MkwQStm7/Chat-GPT-Image-18-jul-2025-09-21-47-a-m.png');
+      background-size: cover;
+    }
+
+    .ampliado span {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+
+  <h2>Justificación del programa</h2>
+  <div class="dato-impacto">
+<div class="circulo" data-final="26" onclick="animarNumero(this)">
+  <span>0</span>
+  <div class="descripcion">
+    <strong>26 instituciones de educación superior en Colombia</strong> ofrecen programas que incluyen “datos”, “procesamiento” o “analítica” en su título.
+    <em>(Fuente: SNIES-2025)</em>
+  </div>
+</div>
+    <div class="circulo" data-final="200000" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Se estima una escasez de más de 200.000 profesionales TIC en Colombia para 2025. <em>(Observatorio Bogotá, 2023)</em></div></div>
+    <div class="circulo" data-final="162000" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Demanda proyectada de profesionales en datos, inteligencia artificial y automatización. <em>(Plan Atenea 2025)</em></div></div>
+    <div class="circulo" data-final="53000" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Faltan más de 53.000 técnicos TIC en Colombia según el estudio de brechas. <em>(Atenea, 2023)</em></div></div>
+    <div class="circulo" data-final="1000" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Más de 1000 vacantes relacionadas con datos y tecnología registradas en LinkedIn en Bogotá. <em>(Análisis bolsas de empleo, 2025)</em></div></div>
+    <div class="circulo" data-final="878" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Computrabajo registró 878 ofertas activas relacionadas con perfiles técnicos en datos. <em>(Análisis bolsas de empleo, 2025)</em></div></div>
+    <div class="circulo" data-final="100" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Más de 100 vacantes para perfiles de datos en Indeed Colombia. <em>(Análisis bolsas de empleo, 2025)</em></div></div>
+<div
+<div class="circulo" data-final="21" onclick="animarNumero(this)">
+  <span>0</span>
+  <div class="descripcion">
+    <strong>21 programas académicos</strong> en Colombia tienen en su título términos clave como “datos”, “procesamiento”, “analítica” o “sistematización”.
+    <em>(Fuente:SNIES-2025)</em>
+  </div>
+
+</div>
+    <div class="circulo" data-final="38" onclick="animarNumero(this)"><span>0</span><div class="descripcion">El sector TIC lidera las expectativas de empleo en Colombia con un crecimiento proyectado del 38%. <em>(Gráfico nacional 2025)</em></div></div>
+  </div>
+
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXoza2F0M3lrMGZwc2Jrb2Rsa2JxMnR1M2ppZTJ2bWZkczl6eWs3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VmiErnbFH0aMvOjnS7/giphy.gif" alt="Búho" onclick="restaurarVista()">
+  </div>
+
+  <script>
+    let circuloActivo = null;
+    function animarNumero(el) {
+      if (circuloActivo) return;
+      circuloActivo = el;
+      document.querySelectorAll('.circulo').forEach(c => { if (c !== el) c.style.display = 'none'; });
+      const span = el.querySelector('span');
+      const final = parseInt(el.getAttribute('data-final'));
+      const isPercent = final <= 100;
+      const descripcion = el.querySelector('.descripcion');
+      let current = 0;
+      span.style.display = 'block';
+      function step() {
+        current += Math.ceil(final / 60);
+        if (current >= final) {
+          current = final;
+          span.textContent = isPercent ? current + (final === 38 ? '%' : '') : '+' + current.toLocaleString();
+          el.classList.add('ampliado');
+          descripcion.style.display = 'block';
+        } else {
+          span.textContent = isPercent ? current + (final === 38 ? '%' : '') : '+' + current.toLocaleString();
+          requestAnimationFrame(step);
+        }
+      }
+      step();
+    }
+
+    function restaurarVista() {
+      if (!circuloActivo) return;
+      circuloActivo.classList.remove('ampliado');
+      circuloActivo.querySelector('.descripcion').style.display = 'none';
+      circuloActivo.querySelector('span').textContent = '+' + parseInt(circuloActivo.getAttribute('data-final')).toLocaleString();
+      document.querySelectorAll('.circulo').forEach(c => c.style.display = 'flex');
+      circuloActivo = null;
+    }
+  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva10.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span class="activa">8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>13</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+
+</body>
+</html>

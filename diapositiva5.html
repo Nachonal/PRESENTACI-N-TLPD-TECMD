@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Por qué es pertinente el programa?</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-image: url('https://i.postimg.cc/tTjkJcMM/Artboard-14.jpg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    }
+    .esquina-superior {
+     width: 100%;
+    }
+      .esquina-superior img:nth-child(1) {
+      height: 130px; width: 1950px; top: 0; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 160px;
+      top: 20px;
+      left: 40px;
+      position: absolute;
+      z-index: 10;
+}
+
+    .esquina-inferior {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+    }
+    .esquina-inferior img:nth-child(1) {
+      width: 4px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 200px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      z-index: 10;
+transform: translateX(-650px);
+
+    }
+    .cuadro, .instituciones {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 2rem;
+      border-radius: 30px;
+    }
+    .cuadro {
+      border: 4px solid #003366;
+      background-color: #f0f8ff;
+    }
+    .instituciones {
+      border: 4px solid #d4af37;
+      background-color: #fff4c2;
+    }
+    .cuadro img, .instituciones img {
+      height: 120px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .cuadro img:hover, .instituciones img:hover {
+      transform: scale(1.1);
+    }
+    #infoBox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  background: #fffbea;
+  padding: 1rem;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  font-size: 3rem;
+  max-width: 500px;
+  z-index: 999;
+  text-align: left;
+text-align: center; /* ahora el texto está centrado */
+  color: #003366;     /* azul institucional */
+  font-weight: bold;  
+}
+  </style>
+  <script>
+    function showInfo(text) {
+      const box = document.getElementById('infoBox');
+      box.innerHTML = text;
+      box.style.display = 'block';
+    }
+    function hideInfo() {
+      document.getElementById('infoBox').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2loYTIxZ2hzY2w1MzdhYXo2N2FpOGE0cnY0dmVlb3EzeDkxb3lsdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jbqXMGhvvF5pX6lRKh/giphy.gif" alt="Búho circular" onclick="location.reload()">
+  </div>
+
+  <h1 style="position:absolute; top:2rem; font-size:2.5rem; color:#d4af37; z-index:100; text-shadow:1px 1px 2px #000;">¿Por qué es pertinente el programa?</h1>
+  <div class="container">
+    <div class="cuadro">
+      <img src="https://static.platzi.com/media/user_upload/logotipo%20LinkedIn-48a7203f-e808-4c04-80d5-1cc2f9ceffff.jpg" alt="LinkedIn" onclick="showInfo('<strong>LinkedIn</strong><br><em>Demanda:</em> Más de 1000 vacantes para perfiles técnicos en datos y TI.<br><em>Competencias:</em> SQL, Power BI, Python, comunicación.<br><em>Fecha:</em> Mayo 2025.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSouqYLxM4iSZDBGqOIC98VlowcMaNap8ekOA&s" alt="Computrabajo" onclick="showInfo('<strong>Computrabajo</strong><br><em>Demanda:</em> 878 ofertas activas para técnicos en análisis y soporte.<br><em>Competencias:</em> Excel avanzado, análisis de datos, visualización.<br><em>Fecha:</em> Mayo 2025.')">
+      <img src="https://prod.statics.indeed.com/eml/assets/images/logo/indeed_logo_1200x630.png" alt="Indeed" onclick="showInfo('<strong>Indeed</strong><br><em>Demanda:</em> 100+ vacantes relacionadas con procesamiento de datos.<br><em>Competencias:</em> Python, SQL, bases de datos relacionales.<br><em>Fecha:</em> Mayo 2025.')">
+      <img src="https://www.elempleo.com/resources/companies/Content/dist/images/layout/es-CO_ee_logo_seo.png" alt="El Empleo" onclick="showInfo('<strong>El Empleo</strong><br><em>Demanda:</em> +160.000 técnicos requeridos en TI.<br><em>Competencias:</em> Power BI, análisis estadístico, manejo de datos masivos.<br><em>Fecha:</em> Mayo 2025.')">
+    </div>
+
+    <div class="instituciones">
+      <img src="https://yt3.googleusercontent.com/IZt6rJxlvGmTE1lxo9UNtYXzr_AaJ75YtTsVruXB8FKAPbg6SMJiaxZ3i5PKmB4LLWBGNKOUqw=s900-c-k-c0x00ffffff-no-rj" alt="World Economic Forum" onclick="showInfo('<strong>World Economic Forum</strong><br><em>Enfoque:</em> Habilidades clave hacia 2030: IA, Big Data, ciberseguridad.<br><em>Importancia:</em> Refuerza pertinencia de programas técnicos.<br><em>Fecha:</em> Informe 2025.')">
+      <img src="https://www.michaelpage.com.co/sites/michaelpage.com.co/files/2021-05/sharelogo.png" alt="Michael Page" onclick="showInfo('<strong>Michael Page</strong><br><em>Sector:</em> Consultoría y selección.<br><em>Competencias:</em> Power BI, habilidades analíticas, comunicación.<br><em>Fecha:</em> 2025.')">
+      <img src="https://img.atom.com/story_images/visual_images/1695835100-Odeb.jpg?class=show" alt="Observatorio Bogotá" onclick="showInfo('<strong>Observatorio de Desarrollo Económico</strong><br><em>Demanda:</em> 53.000 profesionales TIC en 2023, se esperan 200.000 en 2025.<br><em>Competencias:</em> visualización, programación básica, análisis.<br><em>Fecha:</em> 2023–2025.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7aA4G0qO1e9wAeUNHRLvOBlrOLh9GbmQ63Q&s" alt="Agencia Atenea" onclick="showInfo('<strong>Agencia Atenea</strong><br><em>Iniciativa:</em> Talento Capital Formación 2025.<br><em>Competencias:</em> inteligencia artificial, análisis de datos, desarrollo de software.<br><em>Fecha:</em> Marzo 2025.')">
+      <img src="https://www.valoraanalitik.com/wp-content/uploads/2022/12/Banco-de-la-Republica-de-Colombia.jpg" alt="Banco de la República" onclick="showInfo('<strong>Banco de la República</strong><br><em>Áreas:</em> Soporte técnico, análisis económico.<br><em>Competencias:</em> visualización, estadística, Python.<br><em>Fecha:</em> 2023.')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Logo_DANE_2024.png" alt="DANE" onclick="showInfo('<strong>DANE</strong><br><em>Convocatoria:</em> 304 empleos (abril 2025) para monitores y coordinadores.<br><em>Competencias:</em> recolección de datos, análisis estadístico, supervisión.<br><em>Fecha:</em> Febrero–Abril 2025.')">
+    </div>
+  </div>
+  <div id="infoBox"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva6.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span class="activa">4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>13</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+</div>
+    </div>
+</body>
+</html>

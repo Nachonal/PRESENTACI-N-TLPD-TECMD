@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cierre Institucional y Proyección</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #002f66, #005fa3);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 4rem;
+      min-height: 100vh;
+      position: relative;
+      text-align: center;
+    }
+    .esquina-superior, .esquina-inferior {
+      position: absolute;
+      z-index: 10;
+    }
+    .esquina-superior {
+      top: 0;
+      left: 0;
+    }
+    .esquina-superior img:nth-child(1) {
+      width: 180px;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 120px;
+      position: absolute;
+      top: 40px;
+      left: 30px;
+      z-index: 2;
+    }
+    .esquina-inferior {
+      bottom: 0;
+      right: 0;
+    }
+    .esquina-inferior img:nth-child(1) {
+      width: 480px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 250px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+    }
+    h1 {
+      color: #d4af37;
+      font-size: 3.4rem;
+      margin-bottom: 2rem;
+      animation: slideInTop 1s ease-out;
+    }
+    p {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      max-width: 1000px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes slideInTop {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2J3MHU1bmh0dzV1MWJ6eWFqMHQycnE0cWZlNG5kcWN4aWgwZ2ZqdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v2G5C5BGnx9IuUkBA2/giphy.gif" alt="Búho circular">
+  </div>
+  <h1>Cierre Institucional y Proyección</h1>
+  <p>
+    La Fundación Politécnico Minuto de Dios - TecMD reafirma su compromiso con la formación de técnicos laborales capaces de transformar realidades a través del manejo ético, responsable y eficiente de los datos.<br><br>
+    Este programa responde a una necesidad inmediata del sector productivo y proyecta a sus egresados hacia entornos laborales dinámicos, promoviendo inclusión, calidad y desarrollo social.<br><br>
+    Agradecemos profundamente a la Secretaría de Educación de Engativá por su apoyo, acompañamiento y confianza en este proceso formativo.<br><br>
+    ¡Gracias por acompañarnos en este camino hacia el futuro!<br> ¡Hasta pronto!
+  </p>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva0.html';
+    });
+  });
+</script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>12</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span class="activa">17</span></a>
+</div>
+    </div>
+
+
+</body>
+</html>
