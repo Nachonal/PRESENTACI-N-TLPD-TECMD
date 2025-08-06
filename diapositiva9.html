@@ -13,43 +13,55 @@
       padding: 2rem;
       overflow: hidden;
     }
-
-    .esquina-superior, .esquina-inferior {
+.esquina-inferior {
       position: absolute;
       z-index: 10;
     }
 
-    .esquina-superior {
-      top: 0; left: 0;
-    }
+ 
 
     .esquina-superior img:nth-child(1) {
-      width: 180px; top: 20px; left: 0; position: absolute; z-index: 1;
+      height: 130px; width: 100vw; /* 100% del ancho de la ventana */
+max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
     }
-
     .esquina-superior img:nth-child(2) {
-      width: 120px; top: 40px; left: 30px; position: absolute; z-index: 2;
-    }
+      width: 160px;
+      top: 20px;
+      left: 40px;
+      position: absolute;
+      z-index: 10;
+}
+
+
 
     .esquina-inferior {
       bottom: 0; right: 0;
     }
 
     .esquina-inferior img:nth-child(1) {
-      width: 480px; position: absolute; bottom: 0; right: 0; z-index: 1;
+      width: 80px; position: absolute; bottom: 0; right: 0; z-index: 1;
     }
 
     .esquina-inferior img:nth-child(2) {
-      width: 250px; position: absolute; bottom: 10px; right: 10px; z-index: 2;
+      width: 350px; position: absolute; bottom: 10px; right: 10px; z-index: 2;
       cursor: pointer;
     }
 
     h2 {
-      font-size: 2.8rem;
-      color: #d4af37;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 2.5rem;
+      color: #ffbf00;
+      text-align: center;
+      margin: 0;
+      padding: 0 1rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  
     }
+
 
     .dato-impacto {
       display: grid;
@@ -63,6 +75,7 @@
     }
 
     .circulo {
+top: 160px;
       width: 180px;
       height: 180px;
       background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWY4YXYxcXBwa3N0ZjgwN3RsaGtydXZpeGl6Y2ZiODUyNmZvb2ZwcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6S3utVsB9Smq22GCDU/giphy.gif');
@@ -134,17 +147,17 @@
 </head>
 <body>
   <div class="esquina-superior">
-    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" alt="Bandera fondo">
     <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
   </div>
 
   <h2>Justificación del programa</h2>
   <div class="dato-impacto">
-<div class="circulo" data-final="26" onclick="animarNumero(this)">
+<div class="circulo" data-final="36" onclick="animarNumero(this)">
   <span>0</span>
   <div class="descripcion">
-    <strong>26 instituciones de educación superior en Colombia</strong> ofrecen programas que incluyen “datos”, “procesamiento” o “analítica” en su título.
-    <em>(Fuente: SNIES-2025)</em>
+    <strong>36 instituciones en Colombia</strong> ofrecen programas que incluyen “datos”, “procesamiento” o “analítica” en su título.
+    <em>(Fuente: SIET-2025)</em>
   </div>
 </div>
     <div class="circulo" data-final="200000" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Se estima una escasez de más de 200.000 profesionales TIC en Colombia para 2025. <em>(Observatorio Bogotá, 2023)</em></div></div>
@@ -154,20 +167,20 @@
     <div class="circulo" data-final="878" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Computrabajo registró 878 ofertas activas relacionadas con perfiles técnicos en datos. <em>(Análisis bolsas de empleo, 2025)</em></div></div>
     <div class="circulo" data-final="100" onclick="animarNumero(this)"><span>0</span><div class="descripcion">Más de 100 vacantes para perfiles de datos en Indeed Colombia. <em>(Análisis bolsas de empleo, 2025)</em></div></div>
 <div
-<div class="circulo" data-final="21" onclick="animarNumero(this)">
+<div class="circulo" data-final="41" onclick="animarNumero(this)">
   <span>0</span>
   <div class="descripcion">
-    <strong>21 programas académicos</strong> en Colombia tienen en su título términos clave como “datos”, “procesamiento”, “analítica” o “sistematización”.
-    <em>(Fuente:SNIES-2025)</em>
+    <strong>41 Técnicos Laborales</strong> en Colombia tienen en su título términos clave como “datos”, “procesamiento”, “analítica” o “sistematización”.
+    <em>(Fuente:SIET-2025)</em>
   </div>
 
 </div>
-    <div class="circulo" data-final="38" onclick="animarNumero(this)"><span>0</span><div class="descripcion">El sector TIC lidera las expectativas de empleo en Colombia con un crecimiento proyectado del 38%. <em>(Gráfico nacional 2025)</em></div></div>
+    <div class="circulo" data-final="38%" onclick="animarNumero(this)"><span>0</span><div class="descripcion">El sector TIC lidera las expectativas de empleo en Colombia con un crecimiento proyectado del 38%. <em>(Gráfico nacional 2025)</em></div></div>
   </div>
 
   <div class="esquina-inferior">
     <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
-    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXoza2F0M3lrMGZwc2Jrb2Rsa2JxMnR1M2ppZTJ2bWZkczl6eWs3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VmiErnbFH0aMvOjnS7/giphy.gif" alt="Búho" onclick="restaurarVista()">
+    <img src="https://i.ibb.co/ymFyDghn/buho-bienestar01-1.png" alt="Búho" onclick="restaurarVista()">
   </div>
 
   <script>
