@@ -7,150 +7,170 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #002f66, #005fa3);
+      background-image: url("https://i.ibb.co/Rk51b01r/Artboard-5jpg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: white;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
       padding: 4rem;
       min-height: 100vh;
       position: relative;
-      text-align: center;
     }
-    .esquina-superior, .esquina-inferior {
+    .esquina-superior img:nth-child(1) {
+      height: 130px; width: 100vw;
+      max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 160px;
+      top: 20px;
+      left: 40px;
       position: absolute;
       z-index: 10;
     }
-    .esquina-superior {
-      top: 0;
-      left: 0;
-    }
-    .esquina-superior img:nth-child(1) {
-      width: 180px;
-      position: absolute;
-      top: 20px;
-      left: 0;
-      z-index: 1;
-    }
-    .esquina-superior img:nth-child(2) {
-      width: 120px;
-      position: absolute;
-      top: 40px;
-      left: 30px;
-      z-index: 2;
-    }
     .esquina-inferior {
+      position: fixed;
       bottom: 0;
-      right: 0;
+      left: 0;
+      z-index: 20;
     }
     .esquina-inferior img:nth-child(1) {
-      width: 480px;
+      width: 48px;
       position: absolute;
       bottom: 0;
-      right: 0;
+      left: 0;
       z-index: 1;
     }
     .esquina-inferior img:nth-child(2) {
-      width: 250px;
+      width: 650px;
       position: absolute;
       bottom: 0;
-      right: 0;
+      left: 0;
       z-index: 2;
     }
-    h1 {
-      color: #d4af37;
-      font-size: 3.4rem;
-      margin-bottom: 2rem;
-      animation: slideInTop 1s ease-out;
+    .texto-web {
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+      z-index: 5;
+      background-color: rgba(255,215,0,0.7);
+      padding: 4px 8px;
+      border-radius: 5px;
     }
-    p {
-      font-size: 1.8rem;
+    h1 {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 2.5rem;
+      color: #ffbf00;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+   p:first-of-type { margin-top: 120px; } 
+p {
+      font-size: 2.2rem;
       line-height: 2.4rem;
       max-width: 1000px;
       animation: fadeIn 1.2s ease-in-out;
+      color: #003366;
+      background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+      padding: 1rem;
+      border-radius: 10px;
+           text-align: justify;
+
+  margin-bottom: 0.5rem;
     }
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
-    @keyframes slideInTop {
-      from {opacity: 0; transform: translateY(-50px);}
-      to {opacity: 1; transform: translateY(0);}
+    .barra-progreso {
+      display: flex;
+      gap: 6px;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+    }
+    .barra-progreso a span {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: black;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .barra-progreso span.activa {
+      background: #d4af37;
+      transform: scale(1.8);
+      color: white;
     }
   </style>
 </head>
 <body>
   <div class="esquina-superior">
-    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" alt="Bandera fondo">
     <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
   </div>
+
   <div class="esquina-inferior">
     <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
-    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2J3MHU1bmh0dzV1MWJ6eWFqMHQycnE0cWZlNG5kcWN4aWgwZ2ZqdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v2G5C5BGnx9IuUkBA2/giphy.gif" alt="Búho circular">
+    <img src="https://i.ibb.co/7dBBBPFr/Redes-Inferior.png" alt="Búho circular">
+    <div class="texto-web">WWW.TECMD.EDU.CO</div>
   </div>
+
   <h1>Cierre Institucional y Proyección</h1>
-  <p>
-    La Fundación Politécnico Minuto de Dios - TecMD reafirma su compromiso con la formación de técnicos laborales capaces de transformar realidades a través del manejo ético, responsable y eficiente de los datos.<br><br>
-    Este programa responde a una necesidad inmediata del sector productivo y proyecta a sus egresados hacia entornos laborales dinámicos, promoviendo inclusión, calidad y desarrollo social.<br><br>
-    Agradecemos profundamente a la Secretaría de Educación de Engativá por su apoyo, acompañamiento y confianza en este proceso formativo.<br><br>
-    ¡Gracias por acompañarnos en este camino hacia el futuro!<br> ¡Hasta pronto!
-  </p>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.body.addEventListener('dblclick', () => {
-      window.location.href = 'diapositiva0.html';
+
+  <p><strong>La Fundación Politécnico Minuto de Dios – TecMD</strong> reafirma su compromiso con la formación de técnicos laborales capaces de transformar realidades mediante el manejo ético, responsable y eficiente de los datos.</p>
+  <p>Este programa responde a una necesidad inmediata del sector productivo y proyecta a sus egresados hacia entornos laborales dinámicos, promoviendo inclusión, calidad y desarrollo social.</p>
+  <p>Agradecemos profundamente a la <strong>Secretaría de Educación de Engativá</strong> por su apoyo, acompañamiento y confianza en este proceso formativo.</p>
+  <p>Y ahora, continuemos explorando juntos… vamos a darle una mirada a nuestra plataforma virtual:</p>
+
+  <a href="https://campus.tecmd.edu.co/login/index.php" target="_blank" 
+     style="display:inline-block; background-color:#d4af37; color:#003366; font-weight:bold; padding:20px 40px; border-radius:8px; text-decoration:none; font-size:1.3rem; position:absolute; right:20%; transform:translate(50%,-50%); top:50%;">
+     🌐 Ir a la Plataforma Virtual
+  </a>
+
+  <div class="barra-progreso">
+    <a href="indice.html"><span>I</span></a>
+    <a href="diapositiva2.html"><span>1</span></a>
+    <a href="diapositiva3.html"><span>2</span></a>
+    <a href="diapositiva4.html"><span>3</span></a>
+    <a href="diapositiva5.html"><span>4</span></a>
+    <a href="diapositiva6.html"><span>5</span></a>
+    <a href="diapositiva7.html"><span>6</span></a>
+    <a href="diapositiva8.html"><span>7</span></a>
+    <a href="diapositiva9.html"><span>8</span></a>
+    <a href="diapositiva10.html"><span>9</span></a>
+    <a href="diapositiva11.html"><span>10</span></a>
+    <a href="diapositiva12.html"><span>11</span></a>
+    <a href="diapositiva13.html"><span>12</span></a>
+    <a href="diapositiva14.html"><span>13</span></a>
+    <a href="diapositiva15.html"><span>14</span></a>
+    <a href="diapositiva16.html"><span>15</span></a>
+    <a href="diapositiva17.html"><span>16</span></a>
+    <a href="diapositiva18.html"><span class="activa">17</span></a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.addEventListener('dblclick', () => {
+        window.location.href = 'diapositiva0.html';
+      });
     });
-  });
-</script>
-<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
-      <!-- Barra de progreso con 18 círculos -->
-      <style>
-        .barra-progreso {
-          display: flex;
-          gap: 6px;
-        }
-        .barra-progreso a span {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background: #ccc;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 0.8rem;
-          color: black;
-          font-weight: bold;
-          transition: background 0.3s, transform 0.3s;
-        }
-        .barra-progreso span.activa {
-          background: #d4af37;
-          transform: scale(1.8);
-          color: white;
-        }
-      </style>
-      <div class="barra-progreso">
-  <a href="indice.html"><span>I</span></a>
-  <a href="diapositiva2.html"><span>1</span></a>
-  <a href="diapositiva3.html"><span>2</span></a>
-  <a href="diapositiva4.html"><span>3</span></a>
-  <a href="diapositiva5.html"><span>4</span></a>
-  <a href="diapositiva6.html"><span>5</span></a>
-  <a href="diapositiva7.html"><span>6</span></a>
-  <a href="diapositiva8.html"><span>7</span></a>
-  <a href="diapositiva9.html"><span>8</span></a>
-  <a href="diapositiva10.html"><span>9</span></a>
-  <a href="diapositiva11.html"><span>10</span></a>
-  <a href="diapositiva12.html"><span>11</span></a>
-  <a href="diapositiva13.html"><span>12</span></a>
-  <a href="diapositiva14.html"><span>13</span></a>
-  <a href="diapositiva15.html"><span>14</span></a>
-  <a href="diapositiva16.html"><span>15</span></a>
-  <a href="diapositiva17.html"><span>16</span></a>
-  <a href="diapositiva18.html"><span class="activa">17</span></a>
-</div>
-    </div>
-
-
+  </script>
 </body>
 </html>
