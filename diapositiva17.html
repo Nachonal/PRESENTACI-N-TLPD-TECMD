@@ -13,7 +13,8 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       height: 100vh;
-      background-image: url('https://i.ibb.co/pvQ7SDDH/Imagen1.jpg');
+     background: linear-gradient(135deg, #FFEB99, #ADD8E6);
+
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -28,29 +29,23 @@
       overflow-y: auto;
     }
 
-    .esquina-superior, .esquina-inferior {
+    .esquina-inferior {
       position: absolute;
       z-index: 10;
     }
 
-    .esquina-superior {
-      top: 0;
-      left: 0;
+     .esquina-superior img:nth-child(1) {
+      height: 130px; width: 100vw; /* 100% del ancho de la ventana */
+max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
     }
-
-    .esquina-superior img:nth-child(1) {
-      width: 180px;
-      top: 20px;
-      left: 0;
-      position: absolute;
-    }
-
     .esquina-superior img:nth-child(2) {
-      width: 120px;
-      top: 40px;
-      left: 30px;
+      width: 160px;
+      top: 20px;
+      left: 40px;
       position: absolute;
-    }
+      z-index: 10;
+}
+
 
     .esquina-inferior {
       bottom: 0;
@@ -58,7 +53,7 @@
     }
 
     .esquina-inferior img:nth-child(1) {
-      width: 480px;
+      width: 80px;
       bottom: 0;
       right: 0;
       position: absolute;
@@ -71,11 +66,21 @@
       position: absolute;
     }
 
-    h1 {
-      font-size: 4rem;
-      color: #d4af37;
-      margin-bottom: 2rem;
+     h1 {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 2.5rem;
+      color: #ffbf00;
+      text-align: center;
+      margin: 0;
+      padding: 0 1rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  
     }
+
 
     .ovalo {
       background-color: rgba(255, 255, 255, 0.4);
@@ -88,6 +93,7 @@
       cursor: pointer;
       transition: background 0.5s;
       font-size: 35px;
+color: #00008B;
     }
 
     .ovalo:hover {
@@ -98,7 +104,7 @@
       display: none;
       margin-top: 0.5rem;
       font-size: 2rem;
-      color: #fff;
+      color: #00008B;
     }
 
     @keyframes fadeInDown {
@@ -121,13 +127,13 @@
 </head>
 <body>
   <div class="esquina-superior">
-    <img src="https://i.postimg.cc/bJW99sB0/tecbandera2.png" alt="Bandera fondo">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" alt="Bandera fondo">
     <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
   </div>
 
   <div class="esquina-inferior">
     <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
-    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNvNHQ5eDhkNHdxcWRnOWlrM21wa2ZxbGUwd3ZxNWsxOGd3dzZkbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1k2q2lOIdRP9N5g1G1/giphy.gif" alt="Búho circular">
+    <img src="https://i.ibb.co/qLPN5cY2/piero-grados.png" alt="Búho circular">
   </div>
 
   <h1>Rasgos Diferenciadores</h1>
@@ -210,4 +216,3 @@
 
 </body>
 </html>
-
