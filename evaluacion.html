@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluación en el Técnico Laboral</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+     .esquina-superior img:nth-child(1) {
+      height: 130px; width: 100vw; /* 100% del ancho de la ventana */
+max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 160px;
+      top: 20px;
+      left: 40px;
+      position: absolute;
+      z-index: 10;
+}
+
+
+
+    .esquina-inferior { position: absolute; bottom: 0; right: 0; z-index: 10; }
+    .esquina-inferior img { position: absolute; }
+    .esquina-inferior img:nth-child(1) { width: 480px; bottom: 0; right: 0; z-index: 1; }
+    .esquina-inferior img:nth-child(2) { width: 360px; bottom: 0; right: 0; z-index: 2; }
+
+    .contenido-central {
+      max-width: 1000px;
+      padding: 2rem;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+    .contenido-central  h1 {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 2.5rem;
+      color: #ffbf00;
+      text-align: center;
+      margin: 0;
+      padding: 0 1rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  
+    }
+
+    .tipos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      text-align: left;
+    }
+    .tipo {
+      background: #f9f9f9;
+      border-left: 6px solid #d4af37;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .tipo:hover {
+      transform: translateY(-6px);
+      background: #fff7e6;
+    }
+    .tipo h2 { color: #003366; margin-bottom: 0.5rem; font-size: 1.3rem; }
+    .tipo p { font-size: 1rem; }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.addEventListener('click', () => {
+        window.location.href = 'diapositiva_siguiente.html';
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="esquina-superior">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+
+  <div class="contenido-central">
+    <h1>Evaluación en el Técnico Laboral en Procesamiento de Datos</h1>
+    <div class="tipos">
+      <div class="tipo">
+        <h2>Herramientas Informáticas</h2>
+        <p>Ejercicios en hojas de cálculo: uso de fórmulas, tablas dinámicas, validación y generación de reportes.</p>
+      </div>
+      <div class="tipo">
+        <h2>Bases de Datos SQL</h2>
+        <p>Evaluaciones prácticas: creación de tablas, consultas SELECT/JOIN, inserción y gestión de registros.</p>
+      </div>
+      <div class="tipo">
+        <h2>Calidad de Datos</h2>
+        <p>Informes escritos con métricas de completitud, consistencia y confiabilidad de datasets reales.</p>
+      </div>
+      <div class="tipo">
+        <h2>Visualización de Datos</h2>
+        <p>Diseño de dashboards en Excel o Looker Studio aplicando filtros, gráficos comparativos y KPIs.</p>
+      </div>
+      <div class="tipo">
+        <h2>Sistematización de Datos Masivos</h2>
+        <p>Scripts en Python (pandas) para limpiar, transformar y analizar conjuntos de datos grandes.</p>
+      </div>
+      <div class="tipo">
+        <h2>Proyecto Integrador</h2>
+        <p>Entrega final aplicada en práctica empresarial: análisis de un caso real con dataset propio de la empresa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://i.postimg.cc/wxh7x1QC/buhomanos.gif" alt="Búho animado">
+  </div>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva12.html"><span>11</span></a>
+  <a href="diapositiva13.html"><span>12</span></a>
+  <a href="diapositiva14.html"><span>13</span></a>
+  <a href="diapositiva15.html"><span>14</span></a>
+  <a href="diapositiva16.html"><span>15</span></a>
+  <a href="diapositiva17.html"><span>16</span></a>
+  <a href="diapositiva18.html"><span>17</span></a>
+ <a href="evaluacion.html"><span class="activa">18</span></a>
+</div>
+    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva18.html';
+    });
+  });
+</script>
+
+</body>
+</html>
+
