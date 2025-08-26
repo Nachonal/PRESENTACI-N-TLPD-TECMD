@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Perfil de Ingreso</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background-image: url('https://i.ibb.co/pvQ7SDDH/Imagen1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .esquina-superior img:nth-child(1) {
+      height: 130px; width: 100vw;
+      max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
+    }
+    .esquina-superior img:nth-child(2) {
+      width: 160px;
+      top: 20px;
+      left: 40px;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .esquina-inferior { position: absolute; bottom: 0; right: 0; z-index: 10; }
+    .esquina-inferior img:nth-child(1) {
+      width: 180px; position: absolute; bottom: 0; right: 0; z-index: 1;
+    }
+    .esquina-inferior img:nth-child(2) {
+      width: 180px; position: absolute; bottom: 10px; right: 10px; z-index: 2; cursor: pointer;
+    }
+
+    /* --- TITULAR --- */
+     h1 {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 2.5rem;
+      color: #ffbf00;
+      text-align: center;
+      margin: 0;
+      padding: 0 1rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  
+    }
+
+
+    /* --- CONTENEDOR PRINCIPAL (como la nueva plantilla) --- */
+    .container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; z-index: 20;
+      align-items: start; justify-items: center; width: 92%; max-width: 1400px;
+    }
+
+    .panel {
+      width: 100%; padding: 1.5rem; border-radius: 30px; display: grid; gap: 1.25rem;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+
+    .panel.azul { border: 4px solid #003366; background-color: #f0f8ff; }
+    .panel.dorado { border: 4px solid #d4af37; background-color: #fff4c2; }
+
+    .card {
+      background: white; border-radius: 20px; padding: 1rem; min-height: 150px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: pointer; text-align: center;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(0,0,0,0.18); }
+    .card img { height: 56px; }
+    .card h3 { font-size: 1.05rem; color: #003366; }
+
+    /* Caja de información dinámica */
+    #infoBox {
+      display: none; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      background: #fffbea; padding: 1rem 1.25rem; border: 2px solid #d4af37; border-radius: 12px;
+      font-size: 0.98rem; max-width: 760px; z-index: 999; text-align: left;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+    #infoBox strong { color: #003366; }
+
+    /* Subtítulos dentro de cada panel */
+    .panel-title { grid-column: 1 / -1; font-weight: 700; color: #003366; font-size: 1.15rem; text-align: left; }
+
+    /* Responsivo */
+    @media (max-width: 1100px) {
+      .container { grid-template-columns: 1fr; gap: 2rem; }
+      .panel { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .panel { grid-template-columns: 1fr; }
+      h1.titulo { font-size: 2rem; }
+    }
+  </style>
+  <script>
+    function showInfo(text) {
+      const box = document.getElementById('infoBox');
+      box.innerHTML = text;
+      box.style.display = 'block';
+    }
+    function hideInfo() { document.getElementById('infoBox').style.display = 'none'; }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Doble clic avanza a la siguiente diapositiva
+      document.body.addEventListener('dblclick', () => {
+        window.location.href = 'diapositiva_perfil_egreso.html';
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- Esquinas institucionales -->
+  <div class="esquina-superior">
+    <img src="https://i.ibb.co/60PBLVXV/banner-azul.jpg" alt="Bandera fondo">
+    <img src="https://i.postimg.cc/c1tm4BvF/tecbandera.png" alt="Bandera superior">
+  </div>
+  <div class="esquina-inferior">
+    <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
+    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2loYTIxZ2hzY2w1MzdhYXo2N2FpOGE0cnY0dmVlb3EzeDkxb3lsdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jbqXMGhvvF5pX6lRKh/giphy.gif" alt="Búho circular" onclick="location.reload()">
+  </div>
+
+  <!-- Título principal (misma ubicación/estilo que la nueva plantilla) -->
+  <h1 class="titulo">Perfil de Ingreso</h1>
+
+  <!-- Contenido principal con dos paneles, siguiendo el patrón de la plantilla compleja -->
+  <div class="container">
+    <!-- Panel 1: Requisitos y Evidencias -->
+    <div class="panel azul">
+      <div class="panel-title">Requisitos y Evidencias</div>
+
+      <div class="card" onclick="showInfo('<strong>Escolaridad mínima</strong><br>Certificar haber aprobado <strong>grado 9°</strong> de educación básica secundaria (Decreto 4904/2009 – ETDH).')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Escolaridad">
+        <h3>Escolaridad mínima</h3>
+      </div>
+
+      <div class="card" onclick="showInfo('<strong>Edad sugerida</strong><br>Desde los 15 años con autorización y <em>articulación</em> con la media; o mayores de edad con certificación de estudios y documento de identidad.')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Edad">
+        <h3>Edad y articulación</h3>
+      </div>
+
+      <div class="card" onclick="showInfo('<strong>Evidencias documentales</strong><br>Documento de identidad, certificado de estudios (mín. 9° aprobado), afiliación a salud vigente y formulario de inscripción diligenciado.')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3382/3382103.png" alt="Documentos">
+        <h3>Documentación</h3>
+      </div>
+
+      <div class="card" onclick="showInfo('<strong>Aspirante</strong><br>Reglamento Estudiantil (Acuerdo número 56 del 08 de mayo de 2025) en el capítulo 3 establece los parámetros para el proceso de inscripción, admisión y matricula; en lo que refiere a los programas en el nivel técnico laboral en el artículo 11 indica los requisitos.')">
+        <img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png" alt="Horario">
+        <h3>Reglamento</h3>
+      </div>
+    </div>
+
+    <!-- Panel 2: Competencias de Ingreso y Condiciones Técnicas -->
+    <div class="panel dorado">
+      <div class="panel-title">Competencias y Condiciones</div>
+
+      <div class="card" onclick="showInfo('<strong>Habilidades digitales</strong><br>Manejo básico de computador y ofimática (crear/editar documentos, hojas de cálculo, navegación segura).')">
+        <img src="https://cdn-icons-png.flaticon.com/512/843/843310.png" alt="Habilidades digitales">
+        <h3>Habilidades digitales</h3>
+      </div>
+
+      <div class="card" onclick="showInfo('<strong>Competencias blandas</strong><br>Trabajo en equipo, comunicación básica, responsabilidad y aprendizaje autónomo orientado a objetivos.')">
+        <img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Blandas">
+        <h3>Competencias blandas</h3>
+      </div>
+
+      <div class="card" onclick="showInfo('<strong>Condiciones técnicas</strong><br>Acceso a computador con conexión a internet estable; cuenta institucional; uso de plataformas educativas (correo, LMS, ofimática en línea).')">
+        <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Técnicas">
+        <h3>Condiciones técnicas</h3>
+      </div>
+
+      <div class="card" onclick="showInfo('<strong>Ética y seguridad</strong><br>Disposición para cumplir lineamientos de protección de datos, netiqueta y uso responsable de información institucional.')">
+        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913136.png" alt="Ética">
+        <h3>Ética y seguridad</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Caja de información dinámica -->
+  <div id="infoBox" onclick="hideInfo()"></div>
+
+  <script>
+    // Cerrar info al presionar ESC
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideInfo(); });
+  </script>
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
+      <!-- Barra de progreso con 18 círculos -->
+      <style>
+        .barra-progreso {
+          display: flex;
+          gap: 6px;
+        }
+        .barra-progreso a span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .barra-progreso span.activa {
+          background: #d4af37;
+          transform: scale(1.8);
+          color: white;
+        }
+      </style>
+      <div class="barra-progreso">
+  <a href="indice.html"><span>I</span></a>
+  <a href="diapositiva2.html"><span>1</span></a>
+  <a href="diapositiva3.html"><span>2</span></a>
+  <a href="diapositiva4.html"><span>3</span></a>
+  <a href="diapositiva5.html"><span>4</span></a>
+  <a href="diapositiva6.html"><span>5</span></a>
+  <a href="diapositiva7.html"><span>6</span></a>
+  <a href="diapositiva8.html"><span>7</span></a>
+  <a href="diapositiva9.html"><span>8</span></a>
+  <a href="diapositiva10.html"><span>9</span></a>
+  <a href="diapositiva11.html"><span>10</span></a>
+  <a href="diapositiva011.html"><span class="activa">11</span></a>
+  <a href="diapositiva12.html"><span>12</span></a>
+  <a href="diapositiva13.html"><span>13</span></a>
+  <a href="diapositiva14.html"><span>14</span></a>
+  <a href="diapositiva15.html"><span>15</span></a>
+  <a href="diapositiva16.html"><span>16</span></a>
+  <a href="diapositiva17.html"><span>17</span></a>
+  <a href="diapositiva18.html"><span>18</span></a>
+
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('dblclick', () => {
+      window.location.href = 'diapositiva12.html';
+    });
+  });
+</script>
+</body>
+</html>
