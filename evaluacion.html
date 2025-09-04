@@ -7,43 +7,12 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      height: 100vh;
       background-color: white;
       color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       padding: 2rem;
-      cursor: pointer;
       position: relative;
-      overflow: hidden;
     }
-     .esquina-superior img:nth-child(1) {
-      height: 130px; width: 100vw; /* 100% del ancho de la ventana */
-max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
-    }
-    .esquina-superior img:nth-child(2) {
-      width: 160px;
-      top: 20px;
-      left: 40px;
-      position: absolute;
-      z-index: 10;
-}
-
-
-
-    .esquina-inferior { position: absolute; bottom: 0; right: 0; z-index: 10; }
-    .esquina-inferior img { position: absolute; }
-    .esquina-inferior img:nth-child(1) { width: 480px; bottom: 0; right: 0; z-index: 1; }
-    .esquina-inferior img:nth-child(2) { width: 360px; bottom: 0; right: 0; z-index: 2; }
-
-    .contenido-central {
-      max-width: 1000px;
-      padding: 2rem;
-      animation: fadeInDown 1.2s ease-in-out;
-    }
-    .contenido-central  h1 {
+    h1 {
       position: absolute;
       top: 30px;
       left: 50%;
@@ -57,14 +26,30 @@ max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   
     }
-
-    .tipos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      text-align: left;
+ .esquina-superior img:nth-child(1) {
+      height: 130px; width: 100vw; /* 100% del ancho de la ventana */
+max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
     }
-    .tipo {
+    .esquina-superior img:nth-child(2) {
+      width: 160px;
+      top: 20px;
+      left: 40px;
+      position: absolute;
+      z-index: 10;
+}
+
+.contenido-central {
+      margin-top: 150px; /* espacio adicional debajo del banner */
+      padding: 2rem;
+    }
+
+    .contenedor {
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .columna {
       background: #f9f9f9;
       border-left: 6px solid #d4af37;
       padding: 1rem 1.5rem;
@@ -72,25 +57,31 @@ max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, background 0.3s ease;
     }
-    .tipo:hover {
+    .columna:hover {
       transform: translateY(-6px);
       background: #fff7e6;
     }
-    .tipo h2 { color: #003366; margin-bottom: 0.5rem; font-size: 1.3rem; }
-    .tipo p { font-size: 1rem; }
+    .columna h2 { color: #003366; margin-bottom: 0.5rem; font-size: 1.3rem; }
+    .columna ul { margin-left: 18px; }
+    .columna li { margin-bottom: .4rem; }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
+    .img-expandible { cursor: pointer; transition: transform .3s; z-index: 900; position: relative; }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
     }
+    .overlay img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+
+    .esquina-inferior { position: fixed; bottom: 0; right: 0; z-index: 1001; }
+    .esquina-inferior img { position: absolute; cursor: pointer; }
+    .esquina-inferior img:nth-child(1) { width: 480px; bottom: 0; right: 0; z-index: 1; }
+    .esquina-inferior img:nth-child(2) { width: 360px; bottom: 0; right: 0; z-index: 2; }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.addEventListener('click', () => {
-        window.location.href = 'diapositiva_siguiente.html';
-      });
-    });
-  </script>
 </head>
 <body>
   <div class="esquina-superior">
@@ -100,38 +91,72 @@ max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
 
   <div class="contenido-central">
     <h1>Evaluación en el Técnico Laboral en Procesamiento de Datos</h1>
-    <div class="tipos">
-      <div class="tipo">
-        <h2>Herramientas Informáticas</h2>
-        <p>Ejercicios en hojas de cálculo: uso de fórmulas, tablas dinámicas, validación y generación de reportes.</p>
-      </div>
-      <div class="tipo">
-        <h2>Bases de Datos SQL</h2>
-        <p>Evaluaciones prácticas: creación de tablas, consultas SELECT/JOIN, inserción y gestión de registros.</p>
-      </div>
-      <div class="tipo">
-        <h2>Calidad de Datos</h2>
-        <p>Informes escritos con métricas de completitud, consistencia y confiabilidad de datasets reales.</p>
-      </div>
-      <div class="tipo">
-        <h2>Visualización de Datos</h2>
-        <p>Diseño de dashboards en Excel o Looker Studio aplicando filtros, gráficos comparativos y KPIs.</p>
-      </div>
-      <div class="tipo">
-        <h2>Sistematización de Datos Masivos</h2>
-        <p>Scripts en Python (pandas) para limpiar, transformar y analizar conjuntos de datos grandes.</p>
-      </div>
-      <div class="tipo">
-        <h2>Proyecto Integrador</h2>
-        <p>Entrega final aplicada en práctica empresarial: análisis de un caso real con dataset propio de la empresa.</p>
-      </div>
-    </div>
+    <section class="contenedor">
+      <!-- Columna 1: Enfoque de Evaluación -->
+      <article class="columna">
+        <h2>Enfoque de Evaluación</h2>
+        <ul>
+          <li>Proceso continuo con momentos formativos y sumativos.</li>
+          <li>Evidencias en contextos reales y simulados.</li>
+          <li>Retroalimentación oportuna para la mejora y la toma de decisiones.</li>
+          <li>Seguimiento a avances y oportunidades de mejora por periodo.</li>
+        </ul>
+      </article>
+
+      <!-- Columna 2: Resultados de aprendizaje -->
+      <article class="columna">
+        <h2>Resultados de aprendizaje</h2>
+        <ul>
+          <li><strong>Herramientas Informáticas:</strong> Ejercicios en hojas de cálculo: uso de fórmulas, tablas dinámicas, validación y generación de reportes.</li>
+          <li><strong>Bases de Datos SQL:</strong> Evaluaciones prácticas: creación de tablas, consultas SELECT/JOIN, inserción y gestión de registros.</li>
+          <li><strong>Calidad de Datos:</strong> Informes escritos con métricas de completitud, consistencia y confiabilidad de datasets reales.</li>
+          <li><strong>Visualización de Datos:</strong> Diseño de dashboards en Excel o Looker Studio aplicando filtros, gráficos comparativos y KPIs.</li>
+          <li><strong>Sistematización de Datos Masivos:</strong> Scripts en Python (pandas) para limpiar, transformar y analizar conjuntos de datos grandes.</li>
+          <li><strong>Proyecto Integrador:</strong> Entrega final aplicada en práctica empresarial: análisis de un caso real con dataset propio de la empresa.</li>
+        </ul>
+      </article>
+
+      <!-- Columna 3: Criterios y Rúbricas -->
+      <article class="columna">
+        <h2>Criterios y Rúbricas</h2>
+        <ul>
+          <li>Alineación con resultados de aprendizaje y evidencias esperadas.</li>
+          <li>Desempeños observables, niveles de logro y ponderaciones claras.</li>
+          <li>Uso de rúbricas analíticas (por criterio) y/o holísticas según el producto.</li>
+          <li>Énfasis en aplicación práctica, ética y resolución de problemas.</li>
+        </ul>
+        <div style='margin-top:1rem; text-align:center;'>
+          <img src="https://i.ibb.co/d0qy8d7S/Captura-de-pantalla-2025-09-04-111956.png" alt="Imagen criterios y rúbricas" class="img-expandible" style="max-width:35%; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <img id="overlayImg" src="" alt="Expansión">
   </div>
 
   <div class="esquina-inferior">
     <img src="https://i.postimg.cc/KYcfGXTT/tecesquianderechacuadro.png" alt="Cuadro fondo">
-    <img src="https://i.postimg.cc/wxh7x1QC/buhomanos.gif" alt="Búho animado">
+    <img src="https://i.postimg.cc/wxh7x1QC/buhomanos.gif" alt="Búho animado" id="cerrarBtn">
   </div>
+
+  <script>
+    const imgExpandible = document.querySelector('.img-expandible');
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlayImg');
+    const cerrarBtn = document.getElementById('cerrarBtn');
+
+    imgExpandible.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+      overlayImg.src = imgExpandible.src;
+    });
+
+    cerrarBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      overlayImg.src = '';
+    });
+  </script>
 <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
       <!-- Barra de progreso con 18 círculos -->
       <style>
@@ -190,4 +215,6 @@ max-width: 100%; top: 0; left: 0; position: absolute; z-index: 1;
 
 </body>
 </html>
+
+
 
