@@ -25,10 +25,9 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     .esquina-superior {
      width: 100%;
@@ -71,8 +70,7 @@
       align-items: center;
       gap: 2rem;
       z-index: 10;
-transform: translateX(-650px);
-
+      transform: translateX(-650px);
     }
     .cuadro, .instituciones {
       display: grid;
@@ -98,28 +96,39 @@ transform: translateX(-650px);
       transform: scale(1.1);
     }
     #infoBox {
-  display: none;
-  position: absolute;
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
-  background: #fffbea;
-  padding: 1rem;
-  border: 2px solid #d4af37;
-  border-radius: 10px;
-  font-size: 3rem;
-  max-width: 500px;
-  z-index: 999;
-  text-align: left;
-text-align: center; /* ahora el texto está centrado */
-  color: #003366;     /* azul institucional */
-  font-weight: bold;  
-}
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+      background: #fffbea;
+      padding: 1rem;
+      border: 2px solid #d4af37;
+      border-radius: 10px;
+      font-size: 3rem;
+      max-width: 500px;
+      z-index: 999;
+      text-align: center;
+      color: #003366;
+    }
+    #infoBox em {
+      display: block;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    #infoBox p {
+      margin-top: 0.5rem;
+      font-weight: normal;
+    }
   </style>
   <script>
     function showInfo(text) {
       const box = document.getElementById('infoBox');
-      box.innerHTML = text;
+      const formattedText = text
+        .replace(/<em>Demanda:<\/em>/g, '<em>Demanda:</em><p>')
+        .replace(/<br><em>Competencias:<\/em>/g, '</p><em>Competencias:</em><p>')
+        .replace(/<br><em>Fecha:<\/em>/g, '</p><em>Fecha:</em><p>') + '</p>';
+      box.innerHTML = formattedText;
       box.style.display = 'block';
     }
     function hideInfo() {
@@ -164,7 +173,6 @@ text-align: center; /* ahora el texto está centrado */
   });
 </script>
 <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 100;">
-      <!-- Barra de progreso con 18 círculos -->
       <style>
         .barra-progreso {
           display: flex;
@@ -212,4 +220,3 @@ text-align: center; /* ahora el texto está centrado */
     </div>
 </body>
 </html>
-
